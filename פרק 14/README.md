@@ -43,6 +43,10 @@ dotnet run
 
 מבחן אמריקאי של 15 שאלות, עם ציון ומשוב בסוף: [למבחן של פרק 14](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch14.html). המבחן הוא ללמידה בלבד, ואין ציון שנשמר.
 
+## השיעור בקמפוס
+
+[לקורס באתר קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home). בקורס יש לפתוח את הפרק המתאים: **פרק 14**.
+
 ## משימה אסינכרונית
 
 המשימה לפרק זה נמצאת בקובץ [משימה אסינכרונית.md](./משימה%20אסינכרונית.md). אפשר לסיים אותה תוך 90 דקות לכל היותר, והיא מוגשת דרך Google Classroom.
