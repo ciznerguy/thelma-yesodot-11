@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מבחן תרגול, פרק 5: לולאות for</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a href="../index.html#ch5">← חזרה לפרק 5</a>
+  <h1>מבחן תרגול: פרק 5, לולאות for</h1>
+  <p>15 שאלות אמריקאיות. בסוף תקבלו ציון ומשוב: מה היה טוב ועל מה כדאי לחזור.</p>
+</div></header>
+<main class="wrap">
+  <div class="notice">המבחן נועד למטרת למידה בלבד. אין ציון שנשמר, והתוצאות אינן נשלחות לאף גורם.</div>
+  <div class="bar"><div class="row"><span id="cnt">0 מתוך 15 נענו</span><div class="track"><div class="fill" id="fill"></div></div></div></div>
+  <div id="result"></div>
+  <div id="quiz"></div>
+  <div class="actions"><button id="fin">סיום ובדיקה</button></div>
+  <div class="warnmsg" id="warn" role="status"></div>
+</main>
+<footer>יסודות מדעי המחשב, תלמה ילין</footer>
+<script>window.QUIZ={"chapter": 5, "title": "לולאות for", "topics": ["מבנה לולאת for", "ספירה וקפיצות", "סכום, מכפלה ומונה", "לולאות מקוננות", "דפוסים נפוצים"], "chapterUrl": "https://github.com/ciznerguy/thelma-yesodot-11/tree/main/%D7%A4%D7%A8%D7%A7%205", "questions": [{"topic": 0, "text": "מה יודפס?", "code": "for (int i = 1; i <= 3; i++)\n{\n    Console.Write(i);\n}", "right": "123", "wrongs": ["012", "1234", "321"], "why": "המשתנה מתחיל ב-1 ועולה עד 3 כולל."}, {"topic": 0, "text": "מה שלושת החלקים בתוך הסוגריים של הלולאה, לפי הסדר?", "code": null, "right": "התחלה, תנאי, קידום", "wrongs": ["תנאי, התחלה, קידום", "קידום, תנאי, התחלה", "משתנה, ערך, סוף"], "why": "ההתחלה פעם אחת, אחריה התנאי לפני כל סיבוב, והקידום בסוף כל סיבוב."}, {"topic": 0, "text": "מתי נבדק התנאי של הלולאה?", "code": null, "right": "לפני כל סיבוב", "wrongs": ["אחרי כל סיבוב", "רק פעם אחת בהתחלה", "רק בסוף הלולאה"], "why": "אם התנאי שקר כבר בהתחלה, הלולאה לא תרוץ אפילו פעם אחת."}, {"topic": 1, "text": "מה יודפס?", "code": "for (int i = 10; i >= 7; i--)\n{\n    Console.Write(i + \" \");\n}", "right": "10 9 8 7", "wrongs": ["10 9 8", "7 8 9 10", "9 8 7"], "why": "הלולאה יורדת, והתנאי כולל את 7."}, {"topic": 1, "text": "מה יודפס?", "code": "for (int i = 0; i <= 10; i = i + 5)\n{\n    Console.Write(i + \" \");\n}", "right": "0 5 10", "wrongs": ["5 10", "0 5", "0 5 10 15"], "why": "קופצים ב-5 מ-0 עד 10 כולל."}, {"topic": 1, "text": "כמה פעמים ירוץ גוף הלולאה for (int i = 1; i < 5; i++)?", "code": null, "right": "4", "wrongs": ["5", "6", "3"], "why": "הערכים הם 1, 2, 3, 4. הערך 5 אינו עובר את התנאי."}, {"topic": 2, "text": "מה יודפס?", "code": "int s = 0;\nfor (int i = 1; i <= 4; i++)\n{\n    s = s + i;\n}\nConsole.WriteLine(s);", "right": "10", "wrongs": ["4", "24", "5"], "why": "1 ועוד 2 ועוד 3 ועוד 4."}, {"topic": 2, "text": "מה יודפס?", "code": "int p = 1;\nfor (int i = 1; i <= 4; i++)\n{\n    p = p * i;\n}\nConsole.WriteLine(p);", "right": "24", "wrongs": ["10", "0", "16"], "why": "המכפלה מתחילה ב-1: 1 כפול 2 כפול 3 כפול 4."}, {"topic": 2, "text": "למה משתנה המכפלה מתחיל ב-1 ולא ב-0?", "code": null, "right": "כי כפל באפס נותן תמיד אפס", "wrongs": ["כי אפס אינו מספר שלם", "כי חובה להתחיל ב-1 בכל לולאה", "כדי לחסוך סיבוב"], "why": "1 הוא האיבר הנייטרלי של כפל."}, {"topic": 3, "text": "מה יודפס?", "code": "for (int r = 1; r <= 2; r++)\n{\n    for (int c = 1; c <= 3; c++)\n    {\n        Console.Write(\"*\");\n    }\n    Console.WriteLine();\n}", "right": "***\n***", "wrongs": ["**\n**\n**", "******", "*\n**\n***"], "why": "הלולאה החיצונית היא שתי שורות, והפנימית שלוש כוכביות בכל שורה."}, {"topic": 3, "text": "מה יודפס?", "code": "for (int r = 1; r <= 3; r++)\n{\n    for (int c = 1; c <= r; c++)\n    {\n        Console.Write(\"*\");\n    }\n    Console.WriteLine();\n}", "right": "*\n**\n***", "wrongs": ["***\n**\n*", "***\n***\n***", "*\n*\n*"], "why": "בכל שורה מספר הכוכביות שווה למספר השורה."}, {"topic": 3, "text": "כמה פעמים יתבצע הגוף הפנימי?", "code": "for (int i = 0; i < 3; i++)\n{\n    for (int j = 0; j < 4; j++)\n    {\n        // הגוף הפנימי\n    }\n}", "right": "12", "wrongs": ["7", "3", "4"], "why": "3 סיבובים חיצוניים כפול 4 סיבובים פנימיים."}, {"topic": 4, "text": "בבדיקת מספר ראשוני בעזרת דגל, מתי הדגל הופך לשקר?", "code": null, "right": "כשנמצא מחלק בין 2 לבין המספר פחות אחד", "wrongs": ["בסוף כל סיבוב", "כשהמספר זוגי בלבד", "כשהמונה מגיע לאפס"], "why": "אם יש מחלק נוסף, המספר אינו ראשוני."}, {"topic": 4, "text": "מה יודפס?", "code": "int c = 0;\nfor (int i = 1; i <= 6; i++)\n{\n    if (6 % i == 0)\n    {\n        c++;\n    }\n}\nConsole.WriteLine(c);", "right": "4", "wrongs": ["2", "3", "6"], "why": "המחלקים של 6 הם 1, 2, 3 ו-6."}, {"topic": 4, "text": "איזו לולאה מדפיסה את כל המספרים הזוגיים מ-2 עד 10?", "code": null, "right": "for (int i = 2; i <= 10; i = i + 2)", "wrongs": ["for (int i = 2; i <= 10; i++)", "for (int i = 1; i <= 10; i = i + 2)", "for (int i = 0; i < 10; i = i + 2)"], "why": "מתחילים ב-2 וקופצים ב-2. האפשרות האחרונה מתחילה מאפס ולא מגיעה ל-10."}]};</script>
+<script src="quiz.js"></script>
+</body>
+</html>

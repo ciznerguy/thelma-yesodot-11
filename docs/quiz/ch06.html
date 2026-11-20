@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מבחן תרגול, פרק 6: לולאות while</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a href="../index.html#ch6">← חזרה לפרק 6</a>
+  <h1>מבחן תרגול: פרק 6, לולאות while</h1>
+  <p>15 שאלות אמריקאיות. בסוף תקבלו ציון ומשוב: מה היה טוב ועל מה כדאי לחזור.</p>
+</div></header>
+<main class="wrap">
+  <div class="notice">המבחן נועד למטרת למידה בלבד. אין ציון שנשמר, והתוצאות אינן נשלחות לאף גורם.</div>
+  <div class="bar"><div class="row"><span id="cnt">0 מתוך 15 נענו</span><div class="track"><div class="fill" id="fill"></div></div></div></div>
+  <div id="result"></div>
+  <div id="quiz"></div>
+  <div class="actions"><button id="fin">סיום ובדיקה</button></div>
+  <div class="warnmsg" id="warn" role="status"></div>
+</main>
+<footer>יסודות מדעי המחשב, תלמה ילין</footer>
+<script>window.QUIZ={"chapter": 6, "title": "לולאות while", "topics": ["מבנה לולאת while", "עבודה עם ספרות", "אתחול וקידום", "לולאה עם דגל", "מעקב ובחירת לולאה"], "chapterUrl": "https://github.com/ciznerguy/thelma-yesodot-11/tree/main/%D7%A4%D7%A8%D7%A7%206", "questions": [{"topic": 0, "text": "מה יודפס?", "code": "int i = 1;\nwhile (i <= 3)\n{\n    Console.Write(i);\n    i++;\n}", "right": "123", "wrongs": ["12", "234", "321"], "why": "המשתנה מקודם בסוף כל סיבוב."}, {"topic": 0, "text": "מה ההבדל בין לולאת for לבין לולאת while מבחינת הכתיבה?", "code": null, "right": "ב-while חייבים לאתחל ולקדם את המשתנה בנפרד", "wrongs": ["ב-while אי אפשר להשתמש במשתנים", "ב-for אין תנאי", "אין הבדל בכתיבה"], "why": "לולאת for כוללת בתוכה התחלה, תנאי וקידום."}, {"topic": 0, "text": "מה יודפס?", "code": "int i = 5;\nwhile (i < 3)\n{\n    Console.WriteLine(\"x\");\n}", "right": "לא מודפס דבר", "wrongs": ["x", "x פעם אחת", "הלולאה אינסופית"], "why": "התנאי שקר כבר בהתחלה, ולכן הגוף לא רץ אפילו פעם אחת."}, {"topic": 1, "text": "מה יודפס?", "code": "int n = 905;\nint c = 0;\nwhile (n > 0)\n{\n    n = n / 10;\n    c++;\n}\nConsole.WriteLine(c);", "right": "3", "wrongs": ["5", "0", "905"], "why": "בכל סיבוב מורידים ספרה, וסופרים."}, {"topic": 1, "text": "מה יודפס?", "code": "int n = 123;\nint s = 0;\nwhile (n > 0)\n{\n    s = s + n % 10;\n    n = n / 10;\n}\nConsole.WriteLine(s);", "right": "6", "wrongs": ["3", "123", "12"], "why": "1 ועוד 2 ועוד 3."}, {"topic": 1, "text": "מה יודפס?", "code": "int n = 123;\nint r = 0;\nwhile (n > 0)\n{\n    r = r * 10 + n % 10;\n    n = n / 10;\n}\nConsole.WriteLine(r);", "right": "321", "wrongs": ["123", "6", "3"], "why": "כל ספרה מודבקת לסוף המספר ההפוך."}, {"topic": 2, "text": "מה קורה בקוד הבא?", "code": "int i = 1;\nwhile (i <= 5)\n{\n    Console.WriteLine(i);\n}", "right": "הלולאה אינסופית, כי i לא מקודם", "wrongs": ["מודפסים המספרים 1 עד 5", "מודפס 1 פעם אחת", "שגיאת קומפילציה"], "why": "בלי קידום, התנאי תמיד אמת."}, {"topic": 2, "text": "מה יודפס?", "code": "int i = 1;\nwhile (i <= 3)\n{\n    i++;\n    Console.Write(i);\n}", "right": "234", "wrongs": ["123", "23", "1234"], "why": "הקידום מתבצע לפני ההדפסה."}, {"topic": 2, "text": "מה יודפס?", "code": "int i = 10;\nwhile (i > 0)\n{\n    i = i - 3;\n}\nConsole.WriteLine(i);", "right": "-2", "wrongs": ["0", "1", "-3"], "why": "הערכים: 10, 7, 4, 1, ואז -2 שאינו עומד בתנאי."}, {"topic": 3, "text": "מה יודפס?", "code": "bool f = false;\nint n = 1;\nwhile (!f)\n{\n    if (n * n > 20)\n    {\n        f = true;\n    }\n    else\n    {\n        n++;\n    }\n}\nConsole.WriteLine(n);", "right": "5", "wrongs": ["4", "20", "21"], "why": "5 כפול 5 הוא 25, והוא הראשון שגדול מ-20."}, {"topic": 3, "text": "מהו דגל בלולאה?", "code": null, "right": "משתנה לוגי ששולט בהמשך הלולאה", "wrongs": ["משתנה שסופר סיבובים", "פקודה שעוצרת את התוכנית", "תנאי של משפט תנאי"], "why": "כשהדגל משתנה, התנאי של הלולאה מפסיק להתקיים."}, {"topic": 3, "text": "מתי עדיף להשתמש בלולאת while ולא בלולאת for?", "code": null, "right": "כשלא יודעים מראש כמה סיבובים יהיו", "wrongs": ["כשרוצים לספור עד 10", "כשיש משתנה אחד בלבד", "כשאין תנאי"], "why": "למשל: הטלת קובייה עד שיוצא שש."}, {"topic": 4, "text": "מה יודפס?", "code": "int x = 48;\nint y = 18;\nwhile (y != 0)\n{\n    int rem = x % y;\n    x = y;\n    y = rem;\n}\nConsole.WriteLine(x);", "right": "6", "wrongs": ["12", "18", "1"], "why": "אלגוריתם אוקלידס למחלק משותף גדול ביותר של 48 ו-18."}, {"topic": 4, "text": "מה יודפס?", "code": "int v = 1;\nint s = 0;\nwhile (v < 100)\n{\n    v = v * 2;\n    s++;\n}\nConsole.WriteLine(s);", "right": "7", "wrongs": ["6", "8", "100"], "why": "1, 2, 4, 8, 16, 32, 64, 128: שבע הכפלות עד שעוברים את 100."}, {"topic": 4, "text": "מגרילים קובייה שוב ושוב עד שיוצא 6. כמה פעמים ירוץ הגוף של הלולאה?", "code": null, "right": "מספר שאינו ידוע מראש", "wrongs": ["בדיוק 6 פעמים", "פעם אחת", "תמיד 5 פעמים"], "why": "זה תלוי במזל."}]};</script>
+<script src="quiz.js"></script>
+</body>
+</html>

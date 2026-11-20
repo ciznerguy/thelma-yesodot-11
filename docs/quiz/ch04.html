@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מבחן תרגול, פרק 4: משפטי תנאי</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a href="../index.html#ch4">← חזרה לפרק 4</a>
+  <h1>מבחן תרגול: פרק 4, משפטי תנאי</h1>
+  <p>15 שאלות אמריקאיות. בסוף תקבלו ציון ומשוב: מה היה טוב ועל מה כדאי לחזור.</p>
+</div></header>
+<main class="wrap">
+  <div class="notice">המבחן נועד למטרת למידה בלבד. אין ציון שנשמר, והתוצאות אינן נשלחות לאף גורם.</div>
+  <div class="bar"><div class="row"><span id="cnt">0 מתוך 15 נענו</span><div class="track"><div class="fill" id="fill"></div></div></div></div>
+  <div id="result"></div>
+  <div id="quiz"></div>
+  <div class="actions"><button id="fin">סיום ובדיקה</button></div>
+  <div class="warnmsg" id="warn" role="status"></div>
+</main>
+<footer>יסודות מדעי המחשב, תלמה ילין</footer>
+<script>window.QUIZ={"chapter": 4, "title": "משפטי תנאי", "topics": ["משפט תנאי פשוט", "תנאי עם אחרת", "שרשרת תנאים", "תנאים מורכבים", "תנאים מקוננים ומחרוזות"], "chapterUrl": "https://github.com/ciznerguy/thelma-yesodot-11/tree/main/%D7%A4%D7%A8%D7%A7%204", "questions": [{"topic": 0, "text": "מה יודפס?", "code": "int x = 5;\nif (x > 3)\n{\n    Console.WriteLine(\"A\");\n}\nConsole.WriteLine(\"B\");", "right": "A\nB", "wrongs": ["A", "B", "B\nA"], "why": "התנאי אמת, ולכן מתבצעת ההדפסה בתוכו, ואחריה ההדפסה שמחוץ לתנאי."}, {"topic": 0, "text": "מה יודפס?", "code": "int x = 2;\nif (x > 3)\n{\n    Console.WriteLine(\"A\");\n}\nConsole.WriteLine(\"B\");", "right": "B", "wrongs": ["A\nB", "A", "לא מודפס דבר"], "why": "התנאי שקר, ולכן מדלגים על הבלוק."}, {"topic": 0, "text": "מתי הבלוק של משפט תנאי מתבצע?", "code": null, "right": "כשהתנאי אמת", "wrongs": ["כשהתנאי שקר", "תמיד", "פעמיים"], "why": "זו המשמעות של תנאי."}, {"topic": 1, "text": "מה יודפס?", "code": "int n = 7;\nif (n % 2 == 0)\n{\n    Console.WriteLine(\"even\");\n}\nelse\n{\n    Console.WriteLine(\"odd\");\n}", "right": "odd", "wrongs": ["even", "even\nodd", "שגיאת קומפילציה"], "why": "7 אינו זוגי, ולכן מתבצע הבלוק של האחרת."}, {"topic": 1, "text": "כמה בלוקים מתבצעים במשפט תנאי עם אחרת?", "code": null, "right": "בדיוק אחד", "wrongs": ["תמיד שניים", "אפס או אחד", "כל מה שהתנאי מאפשר"], "why": "אם התנאי אמת - הראשון, אחרת - השני."}, {"topic": 1, "text": "איזה תנאי אינו תקין?", "code": null, "right": "if (x = 5)", "wrongs": ["if (x == 5)", "if (x > 5)", "if (x != 5)"], "why": "סימן שווה אחד הוא השמה, ולא השוואה."}, {"topic": 2, "text": "מה יודפס?", "code": "int g = 83;\nif (g >= 90)\n{\n    Console.WriteLine(\"1\");\n}\nelse if (g >= 80)\n{\n    Console.WriteLine(\"2\");\n}\nelse\n{\n    Console.WriteLine(\"3\");\n}", "right": "2", "wrongs": ["1", "3", "1\n2"], "why": "בשרשרת מתבצע רק הבלוק של התנאי הראשון שהוא אמת."}, {"topic": 2, "text": "מה יודפס?", "code": "int s = 95;\nif (s > 50) { Console.WriteLine(\"a\"); }\nif (s > 80) { Console.WriteLine(\"b\"); }\nif (s > 90) { Console.WriteLine(\"c\"); }", "right": "a\nb\nc", "wrongs": ["a", "c", "b\nc"], "why": "כל תנאי בנפרד נבדק, ולכן כמה בלוקים יכולים להתבצע."}, {"topic": 2, "text": "מה יודפס?", "code": "int s = 95;\nif (s > 90) { Console.WriteLine(\"c\"); }\nelse if (s > 80) { Console.WriteLine(\"b\"); }\nelse if (s > 50) { Console.WriteLine(\"a\"); }", "right": "c", "wrongs": ["a\nb\nc", "a", "b"], "why": "בשרשרת מתבצע רק הבלוק הראשון שהתנאי שלו אמת."}, {"topic": 3, "text": "מה יודפס?", "code": "int age = 15;\nbool withParent = true;\nif (age >= 16 || (age >= 12 && withParent))\n{\n    Console.WriteLine(\"yes\");\n}\nelse\n{\n    Console.WriteLine(\"no\");\n}", "right": "yes", "wrongs": ["no", "yes\nno", "שגיאת קומפילציה"], "why": "הצד השני של ה-או אמת: הגיל 15 בין 12 ל-15 ועם הורה."}, {"topic": 3, "text": "איזה תנאי בודק שהמספר n נמצא מחוץ לטווח 1 עד 100?", "code": null, "right": "n < 1 || n > 100", "wrongs": ["n < 1 && n > 100", "n > 1 || n < 100", "n >= 1 && n <= 100"], "why": "מחוץ לטווח: קטן מהקצה התחתון או גדול מהקצה העליון."}, {"topic": 3, "text": "איזו שנה היא שנה מעוברת?", "code": null, "right": "2000", "wrongs": ["1900", "2023", "2100"], "why": "שנה שמתחלקת ב-400 היא מעוברת. 1900 ו-2100 מתחלקות ב-100 אבל לא ב-400."}, {"topic": 4, "text": "מה יודפס?", "code": "string s = \"Hello\";\nif (s == \"hello\")\n{\n    Console.WriteLine(\"same\");\n}\nelse\n{\n    Console.WriteLine(\"diff\");\n}", "right": "diff", "wrongs": ["same", "שגיאת קומפילציה", "Hello"], "why": "השוואת מחרוזות מבחינה בין אותיות גדולות לקטנות."}, {"topic": 4, "text": "מה יודפס?", "code": "int a = 5;\nif (a > 3)\n{\n    if (a > 10)\n    {\n        Console.WriteLine(\"big\");\n    }\n    else\n    {\n        Console.WriteLine(\"mid\");\n    }\n}\nelse\n{\n    Console.WriteLine(\"small\");\n}", "right": "mid", "wrongs": ["big", "small", "big\nmid"], "why": "5 גדול מ-3, אבל לא גדול מ-10."}, {"topic": 4, "text": "כדי למצוא את הגדול משלושה מספרים בעזרת משתנה, מהו השלב הראשון?", "code": null, "right": "לשמור את המספר הראשון במשתנה הגדול", "wrongs": ["להשוות את השני לשלישי", "לאפס את המשתנה", "להדפיס את המספרים"], "why": "מתחילים מהמספר הראשון כמועמד, ואז משווים אליו את האחרים."}]};</script>
+<script src="quiz.js"></script>
+</body>
+</html>

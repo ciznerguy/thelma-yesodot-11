@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>מבחן תרגול, פרק 1: הוראות הדפסה ומשתנים</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a href="../index.html#ch1">← חזרה לפרק 1</a>
+  <h1>מבחן תרגול: פרק 1, הוראות הדפסה ומשתנים</h1>
+  <p>15 שאלות אמריקאיות. בסוף תקבלו ציון ומשוב: מה היה טוב ועל מה כדאי לחזור.</p>
+</div></header>
+<main class="wrap">
+  <div class="notice">המבחן נועד למטרת למידה בלבד. אין ציון שנשמר, והתוצאות אינן נשלחות לאף גורם.</div>
+  <div class="bar"><div class="row"><span id="cnt">0 מתוך 15 נענו</span><div class="track"><div class="fill" id="fill"></div></div></div></div>
+  <div id="result"></div>
+  <div id="quiz"></div>
+  <div class="actions"><button id="fin">סיום ובדיקה</button></div>
+  <div class="warnmsg" id="warn" role="status"></div>
+</main>
+<footer>יסודות מדעי המחשב, תלמה ילין</footer>
+<script>window.QUIZ={"chapter": 1, "title": "הוראות הדפסה ומשתנים", "topics": ["הוראות הדפסה", "תווים מיוחדים", "משתנים וטיפוסים", "חישובים והמרות", "החלפה וקליטה"], "chapterUrl": "https://github.com/ciznerguy/thelma-yesodot-11/tree/main/%D7%A4%D7%A8%D7%A7%201", "questions": [{"topic": 0, "text": "מה יודפס?", "code": "Console.Write(\"A\"); Console.WriteLine(\"B\"); Console.Write(\"C\");", "right": "AB\nC", "wrongs": ["A\nB\nC", "ABC", "A B C"], "why": "פעולת ההדפסה בלי ירידת שורה משאירה את הסמן באותה שורה, והפעולה עם ירידת שורה יורדת רק אחרי שהדפיסה."}, {"topic": 0, "text": "מה ההבדל בין פעולת ההדפסה עם ירידת שורה לבין פעולת ההדפסה בלי ירידת שורה?", "code": null, "right": "הראשונה יורדת שורה אחרי ההדפסה, והשנייה לא", "wrongs": ["הראשונה מדפיסה רק מספרים", "השנייה מוחקת את מה שהודפס קודם", "אין ביניהן הבדל"], "why": "זה ההבדל היחיד: ירידת שורה בסוף ההדפסה."}, {"topic": 0, "text": "מה יודפס?", "code": "Console.WriteLine(\"Hi\"); Console.WriteLine(); Console.WriteLine(\"Bye\");", "right": "Hi\n\nBye", "wrongs": ["Hi\nBye", "HiBye", "Hi Bye"], "why": "הפעולה בלי פרמטרים מדפיסה שורה ריקה."}, {"topic": 1, "text": "מה יודפס?", "code": "Console.WriteLine(\"1\\n2\");", "right": "1\n2", "wrongs": ["1\\n2", "12", "1 2"], "why": "לוכסן הפוך ואות n בתוך מחרוזת הוא ירידת שורה."}, {"topic": 1, "text": "מה יודפס?", "code": "Console.WriteLine(\"She said \\\"hi\\\"\");", "right": "She said \"hi\"", "wrongs": ["She said \\\"hi\\\"", "She said hi", "שגיאת קומפילציה"], "why": "לוכסן הפוך לפני גרשיים מדפיס גרשיים, בלי לסגור את המחרוזת."}, {"topic": 1, "text": "איזו מחרוזת מדפיסה לוכסן הפוך אחד?", "code": null, "right": "\"\\\\\"", "wrongs": ["\"\\\"", "\"\\/\"", "\"\\\\\\\\\""], "why": "שני לוכסנים הפוכים בקוד מדפיסים לוכסן הפוך אחד."}, {"topic": 2, "text": "איזה טיפוס מתאים לשמירת מחיר 19.9?", "code": null, "right": "double", "wrongs": ["int", "char", "bool"], "why": "מספר עם נקודה עשרונית נשמר בטיפוס עשרוני."}, {"topic": 2, "text": "מה יודפס?", "code": "int x = 5;\nx = 8;\nConsole.WriteLine(x);", "right": "8", "wrongs": ["5", "13", "x"], "why": "ההשמה האחרונה מוחקת את הערך הקודם."}, {"topic": 2, "text": "איזו הצהרה נכונה?", "code": null, "right": "string name = \"Dana\";", "wrongs": ["string name = 'Dana';", "char c = \"A\";", "int n = \"7\";"], "why": "מחרוזת נכתבת בגרשיים כפולים, ותו בגרשיים בודדים."}, {"topic": 3, "text": "מה יודפס?", "code": "Console.WriteLine(7 / 2);", "right": "3", "wrongs": ["3.5", "4", "3.0"], "why": "חילוק של שני מספרים שלמים נותן מספר שלם, והשארית נזרקת."}, {"topic": 3, "text": "מה יודפס?", "code": "Console.WriteLine(\"a\" + 1 + 2);", "right": "a12", "wrongs": ["a3", "3", "שגיאת קומפילציה"], "why": "החיבור מתבצע משמאל לימין: קודם טקסט עם 1, ואז טקסט עם 2."}, {"topic": 3, "text": "מה יודפס?", "code": "int a = 7;\nint b = 2;\nConsole.WriteLine((double)a / b);", "right": "3.5", "wrongs": ["3", "4", "3.0"], "why": "המרה של אחד המספרים לעשרוני לפני החילוק נותנת תוצאה מדויקת."}, {"topic": 4, "text": "מה יודפס?", "code": "int x = 1;\nint y = 2;\nint t = x;\nx = y;\ny = t;\nConsole.WriteLine(x + \" \" + y);", "right": "2 1", "wrongs": ["1 2", "2 2", "1 1"], "why": "משתנה העזר שומר את הערך הראשון בזמן ההחלפה."}, {"topic": 4, "text": "מה מחזירה פעולת הקליטה מהמשתמש?", "code": null, "right": "מחרוזת", "wrongs": ["מספר שלם", "תו", "מספר עשרוני"], "why": "הקליטה תמיד מחזירה מחרוזת. כדי לקבל מספר צריך להמיר."}, {"topic": 4, "text": "מה יודפס?", "code": "int n = int.Parse(\"12\");\nConsole.WriteLine(n + 1);", "right": "13", "wrongs": ["121", "12", "שגיאת זמן ריצה"], "why": "ההמרה הופכת את המחרוזת למספר, ואז מחברים 1."}]};</script>
+<script src="quiz.js"></script>
+</body>
+</html>

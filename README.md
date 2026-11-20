@@ -12,20 +12,20 @@
 
 ## הפרקים
 
-1. [פרק 1: הוראות הדפסה ומשתנים](<פרק 1/README.md>) (10 דוגמאות) | [קוד](<פרק 1/Program.cs>)
-2. [פרק 2: אופרטורים וביטויים לוגיים](<פרק 2/README.md>) (10 דוגמאות) | [קוד](<פרק 2/Program.cs>)
-3. [פרק 3: ספרייה מתמטית ומחלקת אקראי](<פרק 3/README.md>) (10 דוגמאות) | [קוד](<פרק 3/Program.cs>)
-4. [פרק 4: משפטי תנאי](<פרק 4/README.md>) (10 דוגמאות) | [קוד](<פרק 4/Program.cs>)
-5. [פרק 5: לולאות for](<פרק 5/README.md>) (10 דוגמאות) | [קוד](<פרק 5/Program.cs>)
-6. [פרק 6: לולאות while](<פרק 6/README.md>) (10 דוגמאות) | [קוד](<פרק 6/Program.cs>)
-7. [פרק 7: פעולות](<פרק 7/README.md>) (10 דוגמאות) | [קוד](<פרק 7/Program.cs>) | [משימה אסינכרונית](<פרק 7/משימה אסינכרונית.md>)
-8. [פרק 8: מחרוזות](<פרק 8/README.md>) (10 דוגמאות) | [קוד](<פרק 8/Program.cs>) | [משימה אסינכרונית](<פרק 8/משימה אסינכרונית.md>)
-9. [פרק 9: מערכים](<פרק 9/README.md>) (11 דוגמאות) | [קוד](<פרק 9/Program.cs>) | [משימה אסינכרונית](<פרק 9/משימה אסינכרונית.md>)
-10. [פרק 10: מערך דו-ממדי](<פרק 10/README.md>) (10 דוגמאות) | [קוד](<פרק 10/Program.cs>) | [משימה אסינכרונית](<פרק 10/משימה אסינכרונית.md>)
-11. [פרק 11: מחלקות ועצמים (כולל הכלת עצמים)](<פרק 11/README.md>) (10 דוגמאות) | [קוד](<פרק 11/Program.cs>) | [משימה אסינכרונית](<פרק 11/משימה אסינכרונית.md>)
-12. [פרק 12: הורשה (כולל מחלקה מופשטת)](<פרק 12/README.md>) (10 דוגמאות) | [קוד](<פרק 12/Program.cs>) | [משימה אסינכרונית](<פרק 12/משימה אסינכרונית.md>)
-13. [פרק 13: פולימורפיזם](<פרק 13/README.md>) (10 דוגמאות) | [קוד](<פרק 13/Program.cs>) | [משימה אסינכרונית](<פרק 13/משימה אסינכרונית.md>)
-14. [פרק 14: ממשקים](<פרק 14/README.md>) (10 דוגמאות) | [קוד](<פרק 14/Program.cs>) | [משימה אסינכרונית](<פרק 14/משימה אסינכרונית.md>)
+1. [פרק 1: הוראות הדפסה ומשתנים](<פרק 1/README.md>) (10 דוגמאות) | [קוד](<פרק 1/Program.cs>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch01.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/block-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1+type@sequential+block@c70a90675d3d4f1db1276677fb440188/block-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1+type@vertical+block@462c3822992c4299ae5ba77063556ee0)
+2. [פרק 2: אופרטורים וביטויים לוגיים](<פרק 2/README.md>) (10 דוגמאות) | [קוד](<פרק 2/Program.cs>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch02.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/block-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1+type@sequential+block@6dbec8605ae04074b3f168b109fd71ac/block-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1+type@vertical+block@62e71847a5c34726ba353e19514c2fe3)
+3. [פרק 3: ספרייה מתמטית ומחלקת אקראי](<פרק 3/README.md>) (10 דוגמאות) | [קוד](<פרק 3/Program.cs>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch03.html)
+4. [פרק 4: משפטי תנאי](<פרק 4/README.md>) (10 דוגמאות) | [קוד](<פרק 4/Program.cs>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch04.html)
+5. [פרק 5: לולאות for](<פרק 5/README.md>) (10 דוגמאות) | [קוד](<פרק 5/Program.cs>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch05.html)
+6. [פרק 6: לולאות while](<פרק 6/README.md>) (10 דוגמאות) | [קוד](<פרק 6/Program.cs>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch06.html)
+7. [פרק 7: פעולות](<פרק 7/README.md>) (10 דוגמאות) | [קוד](<פרק 7/Program.cs>) | [משימה אסינכרונית](<פרק 7/משימה אסינכרונית.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch07.html)
+8. [פרק 8: מחרוזות](<פרק 8/README.md>) (10 דוגמאות) | [קוד](<פרק 8/Program.cs>) | [משימה אסינכרונית](<פרק 8/משימה אסינכרונית.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch08.html)
+9. [פרק 9: מערכים](<פרק 9/README.md>) (11 דוגמאות) | [קוד](<פרק 9/Program.cs>) | [משימה אסינכרונית](<פרק 9/משימה אסינכרונית.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch09.html)
+10. [פרק 10: מערך דו-ממדי](<פרק 10/README.md>) (10 דוגמאות) | [קוד](<פרק 10/Program.cs>) | [משימה אסינכרונית](<פרק 10/משימה אסינכרונית.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch10.html)
+11. [פרק 11: מחלקות ועצמים (כולל הכלת עצמים)](<פרק 11/README.md>) (10 דוגמאות) | [קוד](<פרק 11/Program.cs>) | [משימה אסינכרונית](<פרק 11/משימה אסינכרונית.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch11.html)
+12. [פרק 12: הורשה (כולל מחלקה מופשטת)](<פרק 12/README.md>) (10 דוגמאות) | [קוד](<פרק 12/Program.cs>) | [משימה אסינכרונית](<פרק 12/משימה אסינכרונית.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch12.html)
+13. [פרק 13: פולימורפיזם](<פרק 13/README.md>) (10 דוגמאות) | [קוד](<פרק 13/Program.cs>) | [משימה אסינכרונית](<פרק 13/משימה אסינכרונית.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch13.html)
+14. [פרק 14: ממשקים](<פרק 14/README.md>) (10 דוגמאות) | [קוד](<פרק 14/Program.cs>) | [משימה אסינכרונית](<פרק 14/משימה אסינכרונית.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch14.html)
 
 פרקים 1 עד 6 כבר נלמדו, ולכן הם כוללים דוגמאות בלבד, בלי משימות.
 

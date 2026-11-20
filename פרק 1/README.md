@@ -38,4 +38,12 @@ cd "פרק 1"
 dotnet run
 ```
 
+## מבחן תרגול
+
+מבחן אמריקאי של 15 שאלות, עם ציון ומשוב בסוף: [למבחן של פרק 1](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch01.html). המבחן הוא ללמידה בלבד, ואין ציון שנשמר.
+
+## השיעור בקמפוס
+
+[לפרק 1 באתר קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/block-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1+type@sequential+block@c70a90675d3d4f1db1276677fb440188/block-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1+type@vertical+block@462c3822992c4299ae5ba77063556ee0)
+
 [חזרה לדף הראשי](../README.md)
