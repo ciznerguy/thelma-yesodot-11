@@ -44,6 +44,6 @@ dotnet run
 
 ## השיעור בקמפוס
 
-[לפרק 2 באתר קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/block-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1+type@sequential+block@6dbec8605ae04074b3f168b109fd71ac/block-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1+type@vertical+block@62e71847a5c34726ba353e19514c2fe3)
+[לקורס באתר קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home). בקורס יש לפתוח את הפרק המתאים: **פרק 2**.
 
 [חזרה לדף הראשי](../README.md)
