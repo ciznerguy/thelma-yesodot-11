@@ -8,7 +8,7 @@
 
 - פתרון אחד של Visual Studio (`ThelmaYesodot11.sln`) עם 14 פרויקטים, פרויקט לכל פרק.
 - בכל פרק דוגמאות קוד מוכנות להרצה. כל דוגמה היא פעולה סטטית נפרדת, וההערות בקוד כתובות בעברית.
-- בפרקים 7 עד 14 גם משימה אסינכרונית, שאפשר לסיים תוך 90 דקות ולהגיש ב-Google Classroom.
+- בפרקים 7 עד 14 גם שתי משימות אסינכרוניות בכל פרק (השנייה מאתגרת מעט יותר), שאפשר לסיים כל אחת תוך 90 דקות ולהגיש ב-Google Classroom.
 
 ## הפרקים
 
@@ -18,17 +18,17 @@
 4. [פרק 4: משפטי תנאי](<פרק 04/README.md>) (10 דוגמאות) | [קוד](<פרק 04/Program.cs>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch04.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
 5. [פרק 5: לולאות for](<פרק 05/README.md>) (10 דוגמאות) | [קוד](<פרק 05/Program.cs>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch05.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
 6. [פרק 6: לולאות while](<פרק 06/README.md>) (10 דוגמאות) | [קוד](<פרק 06/Program.cs>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch06.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
-7. [פרק 7: פעולות](<פרק 07/README.md>) (10 דוגמאות) | [קוד](<פרק 07/Program.cs>) | [משימה אסינכרונית](<פרק 07/משימה אסינכרונית.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch07.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
-8. [פרק 8: מחרוזות](<פרק 08/README.md>) (10 דוגמאות) | [קוד](<פרק 08/Program.cs>) | [משימה אסינכרונית](<פרק 08/משימה אסינכרונית.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch08.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
-9. [פרק 9: מערכים](<פרק 09/README.md>) (11 דוגמאות) | [קוד](<פרק 09/Program.cs>) | [משימה אסינכרונית](<פרק 09/משימה אסינכרונית.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch09.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
-10. [פרק 10: מערך דו-ממדי](<פרק 10/README.md>) (10 דוגמאות) | [קוד](<פרק 10/Program.cs>) | [משימה אסינכרונית](<פרק 10/משימה אסינכרונית.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch10.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
-11. [פרק 11: מחלקות ועצמים (כולל הכלת עצמים)](<פרק 11/README.md>) (10 דוגמאות) | [קוד](<פרק 11/Program.cs>) | [משימה אסינכרונית](<פרק 11/משימה אסינכרונית.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch11.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
+7. [פרק 7: פעולות](<פרק 07/README.md>) (10 דוגמאות) | [קוד](<פרק 07/Program.cs>) | [משימה אסינכרונית 1](<פרק 07/משימה אסינכרונית 1.md>) | [משימה אסינכרונית 2](<פרק 07/משימה אסינכרונית 2.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch07.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
+8. [פרק 8: מחרוזות](<פרק 08/README.md>) (10 דוגמאות) | [קוד](<פרק 08/Program.cs>) | [משימה אסינכרונית 1](<פרק 08/משימה אסינכרונית 1.md>) | [משימה אסינכרונית 2](<פרק 08/משימה אסינכרונית 2.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch08.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
+9. [פרק 9: מערכים](<פרק 09/README.md>) (11 דוגמאות) | [קוד](<פרק 09/Program.cs>) | [משימה אסינכרונית 1](<פרק 09/משימה אסינכרונית 1.md>) | [משימה אסינכרונית 2](<פרק 09/משימה אסינכרונית 2.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch09.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
+10. [פרק 10: מערך דו-ממדי](<פרק 10/README.md>) (10 דוגמאות) | [קוד](<פרק 10/Program.cs>) | [משימה אסינכרונית 1](<פרק 10/משימה אסינכרונית 1.md>) | [משימה אסינכרונית 2](<פרק 10/משימה אסינכרונית 2.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch10.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
+11. [פרק 11: מחלקות ועצמים (כולל הכלת עצמים)](<פרק 11/README.md>) (10 דוגמאות) | [קוד](<פרק 11/Program.cs>) | [משימה אסינכרונית 1](<פרק 11/משימה אסינכרונית 1.md>) | [משימה אסינכרונית 2](<פרק 11/משימה אסינכרונית 2.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch11.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
 
 ### שייך לחומר הלימוד של כיתה י"ב
 
-12. [פרק 12: הורשה (כולל מחלקה מופשטת)](<פרק 12/README.md>) (10 דוגמאות) | [קוד](<פרק 12/Program.cs>) | [משימה אסינכרונית](<פרק 12/משימה אסינכרונית.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch12.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
-13. [פרק 13: פולימורפיזם](<פרק 13/README.md>) (10 דוגמאות) | [קוד](<פרק 13/Program.cs>) | [משימה אסינכרונית](<פרק 13/משימה אסינכרונית.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch13.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
-14. [פרק 14: ממשקים](<פרק 14/README.md>) (10 דוגמאות) | [קוד](<פרק 14/Program.cs>) | [משימה אסינכרונית](<פרק 14/משימה אסינכרונית.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch14.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
+12. [פרק 12: הורשה (כולל מחלקה מופשטת)](<פרק 12/README.md>) (10 דוגמאות) | [קוד](<פרק 12/Program.cs>) | [משימה אסינכרונית 1](<פרק 12/משימה אסינכרונית 1.md>) | [משימה אסינכרונית 2](<פרק 12/משימה אסינכרונית 2.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch12.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
+13. [פרק 13: פולימורפיזם](<פרק 13/README.md>) (10 דוגמאות) | [קוד](<פרק 13/Program.cs>) | [משימה אסינכרונית 1](<פרק 13/משימה אסינכרונית 1.md>) | [משימה אסינכרונית 2](<פרק 13/משימה אסינכרונית 2.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch13.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
+14. [פרק 14: ממשקים](<פרק 14/README.md>) (10 דוגמאות) | [קוד](<פרק 14/Program.cs>) | [משימה אסינכרונית 1](<פרק 14/משימה אסינכרונית 1.md>) | [משימה אסינכרונית 2](<פרק 14/משימה אסינכרונית 2.md>) | [מבחן תרגול](https://ciznerguy.github.io/thelma-yesodot-11/quiz/ch14.html) | [קמפוס](https://app.campus.gov.il/learning/course/course-v1:MoE+EDU_Matric_ComputerScienceA_HE+2023_1/home)
 
 פרקים 1 עד 6 כבר נלמדו, ולכן הם כוללים דוגמאות בלבד, בלי משימות.
 
@@ -75,7 +75,7 @@ dotnet run
 ThelmaYesodot11.sln
 פרק 01/  Perek01.csproj, Program.cs, README.md
 ...
-פרק 11/  Perek11.csproj, Program.cs, README.md, משימה אסינכרונית.md
+פרק 11/  Perek11.csproj, Program.cs, README.md, משימה אסינכרונית 1.md, משימה אסינכרונית 2.md
 ...
 פרק 14/  ...
 ```
