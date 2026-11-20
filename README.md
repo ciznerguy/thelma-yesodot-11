@@ -4,8 +4,6 @@
 
 המאגר בנוי בהשראת [ciznerguy/yesodot](https://github.com/ciznerguy/yesodot).
 
-**אתר הקורס:** https://ciznerguy.github.io/thelma-yesodot-11/
-
 ## מה יש כאן
 
 - פתרון אחד של Visual Studio (`ThelmaYesodot11.sln`) עם 14 פרויקטים, פרויקט לכל פרק.
