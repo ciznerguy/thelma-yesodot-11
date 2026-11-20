@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>יסודות מדעי המחשב, כיתה י"א</title>
+<meta name="description" content="סביבת לימוד בעברית ל-C#: דוגמאות קוד ומשימות לפרקים 1 עד 14, תלמה ילין.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#1b1f3b;--muted:#5d647f;--line:#e3e6f0;--brand:#5b4bdb;--brand2:#14b8a6;--hot:#f59e0b;--code:#eef0fa;--shadow:0 6px 24px rgba(40,40,100,.08)}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1220;--card:#181c33;--ink:#eceefb;--muted:#9aa2c4;--line:#2a2f52;--brand:#8b7dff;--brand2:#2dd4bf;--code:#232850;--shadow:0 6px 24px rgba(0,0,0,.35)}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Heebo,system-ui,sans-serif;line-height:1.7}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 16px}
+.hero{background:linear-gradient(135deg,#3b2fb5,#5b4bdb 45%,#14b8a6);color:#fff;padding:64px 0 90px;position:relative;overflow:hidden}
+.hero::after{content:"{ }";position:absolute;left:4%;top:10%;font:800 220px/1 'JetBrains Mono',monospace;opacity:.08;direction:ltr}
+.hero small{opacity:.85;font-weight:500;letter-spacing:.3px}
+.hero h1{font-size:clamp(30px,5vw,52px);line-height:1.15;margin:8px 0 12px;font-weight:800}
+.hero p{max-width:640px;font-size:18px;opacity:.93;margin:0 0 26px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.cta a{padding:12px 22px;border-radius:12px;font-weight:700;background:#fff;color:#3b2fb5}
+.cta a.o{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:-48px;position:relative;z-index:2}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:var(--shadow);text-align:center}
+.stat b{display:block;font-size:34px;color:var(--brand);font-weight:800;line-height:1.1}
+.stat span{color:var(--muted);font-size:14px}
+nav.chips{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-top:28px}
+nav.chips .wrap{display:flex;gap:8px;overflow-x:auto;padding:10px 16px;align-items:center}
+nav.chips span{color:var(--muted);font-size:14px;white-space:nowrap;margin-inline-end:4px}
+nav.chips a{flex:none;width:36px;height:36px;border-radius:10px;display:grid;place-items:center;background:var(--card);border:1px solid var(--line);font-weight:700}
+nav.chips a:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
+h2{font-size:28px;margin:48px 0 6px}
+.sub{color:var(--muted);margin:0 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.chapter{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:12px;scroll-margin-top:70px}
+.chapter header{display:flex;gap:14px;align-items:center}
+.num{flex:none;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;display:grid;place-items:center;font-size:24px;font-weight:800}
+.chapter h3{margin:0;font-size:20px;line-height:1.3}
+.badge{display:inline-block;font-size:12px;padding:1px 10px;border-radius:99px;background:var(--code);color:var(--muted);font-weight:500}
+.badge.hot{background:color-mix(in srgb,var(--hot) 20%,transparent);color:var(--hot);font-weight:700}
+.points{margin:0;padding-inline-start:20px;color:var(--muted);font-size:15px}
+details{border:1px solid var(--line);border-radius:12px;padding:0 12px;background:var(--bg)}
+summary{cursor:pointer;padding:10px 0;font-weight:700;font-size:15px}
+.examples{list-style:none;margin:0;padding:0 0 10px;display:flex;flex-direction:column;gap:8px}
+.examples li{display:flex;gap:10px;align-items:flex-start;font-size:14px}
+.examples .n{flex:none;width:24px;height:24px;border-radius:8px;background:var(--code);display:grid;place-items:center;font-size:12px;font-weight:700;color:var(--brand)}
+.examples code{display:block;direction:ltr;text-align:left;font:500 12px 'JetBrains Mono',monospace;color:var(--muted)}
+.chapter footer{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto;padding-top:4px}
+.btn{padding:8px 14px;border-radius:10px;font-weight:700;font-size:14px;background:var(--brand);color:#fff}
+.btn.ghost{background:transparent;color:var(--brand);border:1.5px solid var(--brand)}
+.btn.task{background:var(--hot);color:#2a1d00}
+.btn:hover{filter:brightness(1.1)}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;padding:0;list-style:none}
+.steps li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 18px 18px 18px}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;margin-bottom:8px}
+pre{direction:ltr;text-align:left;background:#10132b;color:#d7dcff;border-radius:12px;padding:14px 16px;overflow-x:auto;font:500 14px/1.6 'JetBrains Mono',monospace;margin:10px 0 0}
+.note{background:var(--card);border:1px solid var(--line);border-inline-start:5px solid var(--brand2);border-radius:14px;padding:16px 20px;box-shadow:var(--shadow)}
+.note ul{margin:6px 0 0;padding-inline-start:20px;color:var(--muted)}
+footer.site{margin:60px 0 0;padding:26px 0;border-top:1px solid var(--line);color:var(--muted);text-align:center;font-size:14px}
+footer.site a{color:var(--brand);font-weight:700}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <small>תלמה ילין · כיתה י"א</small>
+  <h1>יסודות מדעי המחשב<br>בשפת <bdi dir="ltr">C#</bdi></h1>
+  <p>דוגמאות קוד מוכנות להרצה, עם הסברים בעברית, ל-14 הפרקים של הקורס. בפרקים 7 עד 14 מחכה גם משימה שאפשר לסיים תוך 90 דקות.</p>
+  <div class="cta"><a href="#chapters">לפרקים</a><a class="o" href="#start">איך מריצים</a><a class="o" href="https://github.com/ciznerguy/thelma-yesodot-11">המאגר ב-GitHub</a></div>
+</div></header>
+
+<main class="wrap">
+  <section class="stats">
+    <div class="stat"><b>14</b><span>פרקים</span></div>
+    <div class="stat"><b>141</b><span>דוגמאות קוד</span></div>
+    <div class="stat"><b>8</b><span>משימות אסינכרוניות</span></div>
+    <div class="stat"><b>90</b><span>דקות לכל היותר למשימה</span></div>
+  </section>
+</main>
+
+<nav class="chips"><div class="wrap"><span>קפיצה לפרק:</span><a href='#ch1'>1</a><a href='#ch2'>2</a><a href='#ch3'>3</a><a href='#ch4'>4</a><a href='#ch5'>5</a><a href='#ch6'>6</a><a href='#ch7'>7</a><a href='#ch8'>8</a><a href='#ch9'>9</a><a href='#ch10'>10</a><a href='#ch11'>11</a><a href='#ch12'>12</a><a href='#ch13'>13</a><a href='#ch14'>14</a></div></nav>
+
+<main class="wrap">
+  <h2 id="chapters">הפרקים</h2>
+  <p class="sub">הסדר לפי מצגות הלומדות של משרד החינוך. פרקים 1 עד 6 כבר נלמדו ולכן כוללים דוגמאות בלבד.</p>
+  <section class="grid">
+<article class="chapter" id="ch1">
+  <header><span class="num">1</span><div><h3>הוראות הדפסה ומשתנים</h3><span class='badge'>דוגמאות בלבד</span></div></header>
+  <ul class="points"><li>פקודות ההדפסה מציגות טקסט על המסך. אחת יורדת שורה בסוף, והשנייה לא.</li><li>משתנה הוא תא בזיכרון עם שם, טיפוס וערך: מספר שלם, עשרוני, תו, מחרוזת וערך לוגי.</li><li>בחילוק של שלמים התוצאה שלמה. כדי לקבל תוצאה מדויקת ממירים אחד המספרים לעשרוני.</li><li>קליטת נתונים מהמשתמש מתבצעת בשתי הדוגמאות האחרונות, ולכן צריך להקליד בחלון ההרצה.</li></ul>
+  <details><summary>10 דוגמאות בפרק</summary><ol class="examples"><li><span class='n'>1</span><div><b>ההדפסה הראשונה</b><code>Example01_FirstPrint</code></div></li><li><span class='n'>2</span><div><b>ההבדל בין הדפסה עם ירידת שורה להדפסה בלי ירידת שורה</b><code>Example02_WriteVersusWriteLine</code></div></li><li><span class='n'>3</span><div><b>תווים מיוחדים בתוך מחרוזת</b><code>Example03_SpecialCharacters</code></div></li><li><span class='n'>4</span><div><b>משתנים מטיפוס מספר שלם</b><code>Example04_IntVariables</code></div></li><li><span class='n'>5</span><div><b>הטיפוסים העיקריים</b><code>Example05_VariableTypes</code></div></li><li><span class='n'>6</span><div><b>הדפסת תוצאות של חישובים</b><code>Example06_PrintingCalculations</code></div></li><li><span class='n'>7</span><div><b>החלפת ערכים בין שני משתנים</b><code>Example07_SwapTwoVariables</code></div></li><li><span class='n'>8</span><div><b>חילוק והמרת טיפוסים</b><code>Example08_DivisionAndCasting</code></div></li><li><span class='n'>9</span><div><b>קליטת מספר מהמשתמש</b><code>Example09_ReadOneNumber</code></div></li><li><span class='n'>10</span><div><b>קליטת שני מספרים וחישוב ממוצע</b><code>Example10_ReadTwoNumbers</code></div></li></ol></details>
+  <footer>
+    <a class="btn" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%201/Program.cs">💻 קוד</a>
+    <a class="btn ghost" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%201/README.md">📖 הסבר</a>
+    
+  </footer>
+</article>
+<article class="chapter" id="ch2">
+  <header><span class="num">2</span><div><h3>אופרטורים וביטויים לוגיים</h3><span class='badge'>דוגמאות בלבד</span></div></header>
+  <ul class="points"><li>אופרטורים חשבוניים: חיבור, חיסור, כפל, חילוק ושארית, וסדר הפעולות ביניהם.</li><li>שארית בחילוק מאפשרת לבדוק זוגיות, התחלקות, ולחלץ ספרות ממספר.</li><li>אופרטורי השוואה נותנים ערך לוגי, ואופרטורים לוגיים (וגם, או, לא) מחברים ערכים לוגיים.</li><li>הגדלה והקטנה ב-1 נכתבות כפקודה בפני עצמה.</li></ul>
+  <details><summary>10 דוגמאות בפרק</summary><ol class="examples"><li><span class='n'>1</span><div><b>אופרטורים חשבוניים</b><code>Example01_ArithmeticOperators</code></div></li><li><span class='n'>2</span><div><b>חילוק שלמים ושארית</b><code>Example02_IntegerDivisionAndRemainder</code></div></li><li><span class='n'>3</span><div><b>סדר פעולות חשבון</b><code>Example03_Precedence</code></div></li><li><span class='n'>4</span><div><b>זוגי או אי זוגי</b><code>Example04_EvenOrOdd</code></div></li><li><span class='n'>5</span><div><b>ספרות של מספר</b><code>Example05_DigitsOfNumber</code></div></li><li><span class='n'>6</span><div><b>אופרטורי השוואה</b><code>Example06_RelationalOperators</code></div></li><li><span class='n'>7</span><div><b>אופרטורים לוגיים</b><code>Example07_LogicalOperators</code></div></li><li><span class='n'>8</span><div><b>משתנים לוגיים</b><code>Example08_BoolVariables</code></div></li><li><span class='n'>9</span><div><b>בדיקת טווח</b><code>Example09_RangeCheck</code></div></li><li><span class='n'>10</span><div><b>הגדלה והקטנה ב-1</b><code>Example10_IncrementAsStatement</code></div></li></ol></details>
+  <footer>
+    <a class="btn" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%202/Program.cs">💻 קוד</a>
+    <a class="btn ghost" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%202/README.md">📖 הסבר</a>
+    
+  </footer>
+</article>
+<article class="chapter" id="ch3">
+  <header><span class="num">3</span><div><h3>ספרייה מתמטית ומחלקת אקראי</h3><span class='badge'>דוגמאות בלבד</span></div></header>
+  <ul class="points"><li>הספרייה המתמטית בפרק זה: ערך מוחלט, מקסימום, מינימום, חזקה, שורש ועיגול.</li><li>מחלקת אקראי מגרילה מספרים: ההגרלה מתחילה מאפס, והחסם העליון אינו נכלל.</li><li>בדוגמאות עם הגרלה הפלט שונה בכל הרצה.</li></ul>
+  <details><summary>10 דוגמאות בפרק</summary><ol class="examples"><li><span class='n'>1</span><div><b>ערך מוחלט, מקסימום ומינימום</b><code>Example01_AbsMaxMin</code></div></li><li><span class='n'>2</span><div><b>חזקה</b><code>Example02_Power</code></div></li><li><span class='n'>3</span><div><b>שורש ריבועי</b><code>Example03_SquareRoot</code></div></li><li><span class='n'>4</span><div><b>עיגול</b><code>Example04_Round</code></div></li><li><span class='n'>5</span><div><b>מרחק בין שתי נקודות</b><code>Example05_Distance</code></div></li><li><span class='n'>6</span><div><b>יתר במשולש ישר זווית</b><code>Example06_Hypotenuse</code></div></li><li><span class='n'>7</span><div><b>מספר אקראי</b><code>Example07_RandomNumber</code></div></li><li><span class='n'>8</span><div><b>מספר אקראי בטווח</b><code>Example08_RandomRange</code></div></li><li><span class='n'>9</span><div><b>אות אקראית</b><code>Example09_RandomLetter</code></div></li><li><span class='n'>10</span><div><b>הגרלה והחלטה</b><code>Example10_RandomDecision</code></div></li></ol></details>
+  <footer>
+    <a class="btn" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%203/Program.cs">💻 קוד</a>
+    <a class="btn ghost" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%203/README.md">📖 הסבר</a>
+    
+  </footer>
+</article>
+<article class="chapter" id="ch4">
+  <header><span class="num">4</span><div><h3>משפטי תנאי</h3><span class='badge'>דוגמאות בלבד</span></div></header>
+  <ul class="points"><li>משפט תנאי מריץ קוד רק אם תנאי מתקיים. אפשר להוסיף אחרת ושרשרת של תנאים נוספים.</li><li>בשרשרת תנאים מתבצע בלוק אחד לכל היותר, ובתנאים נפרדים יכולים להתבצע כמה בלוקים.</li><li>תנאים מורכבים נבנים בעזרת וגם, או ולא, ואפשר לכתוב תנאי בתוך תנאי.</li><li>מחרוזות מושוות בעזרת סימן שווה כפול.</li></ul>
+  <details><summary>10 דוגמאות בפרק</summary><ol class="examples"><li><span class='n'>1</span><div><b>משפט תנאי פשוט</b><code>Example01_SimpleIf</code></div></li><li><span class='n'>2</span><div><b>תנאי עם אחרת</b><code>Example02_IfElse</code></div></li><li><span class='n'>3</span><div><b>שרשרת תנאים</b><code>Example03_ElseIfChain</code></div></li><li><span class='n'>4</span><div><b>כמה תנאים נפרדים לעומת שרשרת</b><code>Example04_SeveralIfsVersusElseIf</code></div></li><li><span class='n'>5</span><div><b>תנאי בתוך תנאי</b><code>Example05_NestedIf</code></div></li><li><span class='n'>6</span><div><b>תנאי מורכב</b><code>Example06_ConditionWithAndOr</code></div></li><li><span class='n'>7</span><div><b>השוואת מחרוזות</b><code>Example07_CompareStrings</code></div></li><li><span class='n'>8</span><div><b>שנה מעוברת</b><code>Example08_LeapYear</code></div></li><li><span class='n'>9</span><div><b>הגדול משלושה מספרים</b><code>Example09_BiggestOfThree</code></div></li><li><span class='n'>10</span><div><b>הגרלה ותנאים</b><code>Example10_RandomWithConditions</code></div></li></ol></details>
+  <footer>
+    <a class="btn" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%204/Program.cs">💻 קוד</a>
+    <a class="btn ghost" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%204/README.md">📖 הסבר</a>
+    
+  </footer>
+</article>
+<article class="chapter" id="ch5">
+  <header><span class="num">5</span><div><h3>לולאות for</h3><span class='badge'>דוגמאות בלבד</span></div></header>
+  <ul class="points"><li>לולאה חוזרת על קטע קוד. לולאה כזו מורכבת מהתחלה, תנאי וקידום.</li><li>דפוסים נפוצים: סכום, מונה, מכפלה, בדיקת מחלקים וראשוניות בעזרת דגל לוגי.</li><li>לולאה בתוך לולאה מתאימה לדפוסים של שורות ועמודות.</li></ul>
+  <details><summary>10 דוגמאות בפרק</summary><ol class="examples"><li><span class='n'>1</span><div><b>לולאה ראשונה, הדפסת כוכביות</b><code>Example01_PrintStars</code></div></li><li><span class='n'>2</span><div><b>ספירה קדימה</b><code>Example02_CountUp</code></div></li><li><span class='n'>3</span><div><b>ספירה לאחור וקפיצות</b><code>Example03_CountDownAndSteps</code></div></li><li><span class='n'>4</span><div><b>סכום של מספרים</b><code>Example04_SumOfNumbers</code></div></li><li><span class='n'>5</span><div><b>מספרים זוגיים, בשתי דרכים</b><code>Example05_EvenNumbers</code></div></li><li><span class='n'>6</span><div><b>עצרת</b><code>Example06_Factorial</code></div></li><li><span class='n'>7</span><div><b>חזקה בעזרת לולאה</b><code>Example07_PowerByLoop</code></div></li><li><span class='n'>8</span><div><b>ספירת מחלקים</b><code>Example08_CountDivisors</code></div></li><li><span class='n'>9</span><div><b>האם המספר ראשוני</b><code>Example09_IsPrime</code></div></li><li><span class='n'>10</span><div><b>משולש כוכביות, לולאה בתוך לולאה</b><code>Example10_StarTriangle</code></div></li></ol></details>
+  <footer>
+    <a class="btn" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%205/Program.cs">💻 קוד</a>
+    <a class="btn ghost" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%205/README.md">📖 הסבר</a>
+    
+  </footer>
+</article>
+<article class="chapter" id="ch6">
+  <header><span class="num">6</span><div><h3>לולאות while</h3><span class='badge'>דוגמאות בלבד</span></div></header>
+  <ul class="points"><li>לולאת while חוזרת כל עוד התנאי אמת, ומתאימה כשלא ידוע מראש מספר הסיבובים.</li><li>צריך לאתחל את המשתנים לפני הלולאה ולקדם אותם בתוכה, אחרת הלולאה אינסופית.</li><li>שימושים נפוצים: עבודה עם ספרות של מספר, אלגוריתם אוקלידס, הגרלות עד תנאי ולולאה עם דגל.</li></ul>
+  <details><summary>10 דוגמאות בפרק</summary><ol class="examples"><li><span class='n'>1</span><div><b>לולאת תנאי ראשונה</b><code>Example01_FirstWhile</code></div></li><li><span class='n'>2</span><div><b>סכום עד שמגיעים לגבול</b><code>Example02_WhileWithSum</code></div></li><li><span class='n'>3</span><div><b>ספירת ספרות של מספר</b><code>Example03_CountDigits</code></div></li><li><span class='n'>4</span><div><b>סכום ספרות</b><code>Example04_SumOfDigits</code></div></li><li><span class='n'>5</span><div><b>היפוך מספר</b><code>Example05_ReverseNumber</code></div></li><li><span class='n'>6</span><div><b>המחלק המשותף הגדול ביותר</b><code>Example06_GreatestCommonDivisor</code></div></li><li><span class='n'>7</span><div><b>הטלת קובייה עד שיוצא שש</b><code>Example07_RollUntilSix</code></div></li><li><span class='n'>8</span><div><b>לולאה עם דגל</b><code>Example08_FlagLoop</code></div></li><li><span class='n'>9</span><div><b>הכפלה עד שעוברים גבול</b><code>Example09_DoublingUntilLimit</code></div></li><li><span class='n'>10</span><div><b>לולאת תנאי בתוך לולאת תנאי</b><code>Example10_WhileInsideWhile</code></div></li></ol></details>
+  <footer>
+    <a class="btn" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%206/Program.cs">💻 קוד</a>
+    <a class="btn ghost" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%206/README.md">📖 הסבר</a>
+    
+  </footer>
+</article>
+<article class="chapter" id="ch7">
+  <header><span class="num">7</span><div><h3>פעולות</h3><span class='badge hot'>עם משימה</span></div></header>
+  <ul class="points"><li>פעולה היא קטע קוד עם שם שאפשר להפעיל כמה פעמים. לפעולה יכולים להיות פרמטרים וערך מוחזר.</li><li>ארבעת סוגי הפעולות: בלי ערך מוחזר ובלי פרמטרים, בלי ערך מוחזר ועם פרמטרים, עם ערך מוחזר ובלי פרמטרים, עם ערך מוחזר ועם פרמטרים.</li><li>פרמטרים רגילים מועברים כעותק של הערך, ולכן שינוי שלהם בתוך הפעולה לא משנה את המשתנה של הקורא.</li><li>משתנים מקומיים קיימים רק בתוך הפעולה שבה הוגדרו.</li><li>בקובץ הקוד כל דוגמה היא פעולה, ופעולות העזר שהיא משתמשת בהן כתובות מיד אחריה.</li></ul>
+  <details><summary>10 דוגמאות בפרק</summary><ol class="examples"><li><span class='n'>1</span><div><b>פעולה בלי ערך מוחזר ובלי פרמטרים</b><code>Example01_VoidNoParameters</code></div></li><li><span class='n'>2</span><div><b>פעולה בלי ערך מוחזר ועם פרמטרים</b><code>Example02_VoidWithParameters</code></div></li><li><span class='n'>3</span><div><b>פעולה עם ערך מוחזר ובלי פרמטרים</b><code>Example03_ReturnNoParameters</code></div></li><li><span class='n'>4</span><div><b>פעולה עם ערך מוחזר ועם פרמטרים</b><code>Example04_ReturnWithParameters</code></div></li><li><span class='n'>5</span><div><b>פעולות שמחזירות ערך לוגי</b><code>Example05_BoolMethods</code></div></li><li><span class='n'>6</span><div><b>פעולה שקוראת לפעולה אחרת</b><code>Example06_MethodCallsMethod</code></div></li><li><span class='n'>7</span><div><b>העברת ערך</b><code>Example07_ValueIsCopied</code></div></li><li><span class='n'>8</span><div><b>משתנים מקומיים</b><code>Example08_LocalVariables</code></div></li><li><span class='n'>9</span><div><b>פעולות עם לולאות</b><code>Example09_MethodsWithLoops</code></div></li><li><span class='n'>10</span><div><b>פעולות עם מספרים אקראיים</b><code>Example10_RandomMethods</code></div></li></ol></details>
+  <footer>
+    <a class="btn" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%207/Program.cs">💻 קוד</a>
+    <a class="btn ghost" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%207/README.md">📖 הסבר</a>
+    <a class='btn task' href='https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%207/%D7%9E%D7%A9%D7%99%D7%9E%D7%94%20%D7%90%D7%A1%D7%99%D7%A0%D7%9B%D7%A8%D7%95%D7%A0%D7%99%D7%AA.md'>📝 משימה אסינכרונית</a>
+  </footer>
+</article>
+<article class="chapter" id="ch8">
+  <header><span class="num">8</span><div><h3>מחרוזות</h3><span class='badge hot'>עם משימה</span></div></header>
+  <ul class="points"><li>מחרוזת היא רצף תווים. התו הראשון נמצא במקום אפס, והאחרון באורך פחות אחד.</li><li>פעולות עיקריות: אורך, תו במקום, חיתוך, חיפוש, הכלה, אותיות גדולות וקטנות, והחלפה.</li><li>מחרוזת אינה משתנה: כל פעולה מחזירה מחרוזת חדשה שצריך לשמור.</li><li>תווים הם מספרים, ולכן אפשר לחשב איתם, למשל למצוא מקום של אות באלפבית.</li></ul>
+  <details><summary>10 דוגמאות בפרק</summary><ol class="examples"><li><span class='n'>1</span><div><b>אורך המחרוזת ותו במקום מסוים</b><code>Example01_LengthAndIndex</code></div></li><li><span class='n'>2</span><div><b>מעבר על כל התווים</b><code>Example02_PrintEachChar</code></div></li><li><span class='n'>3</span><div><b>חיתוך חלק ממחרוזת</b><code>Example03_Substring</code></div></li><li><span class='n'>4</span><div><b>חיפוש בתוך מחרוזת</b><code>Example04_IndexOfAndContains</code></div></li><li><span class='n'>5</span><div><b>אותיות גדולות, קטנות והחלפה</b><code>Example05_UpperLowerReplace</code></div></li><li><span class='n'>6</span><div><b>ספירת אות במחרוזת</b><code>Example06_CountLetter</code></div></li><li><span class='n'>7</span><div><b>היפוך מחרוזת</b><code>Example07_ReverseString</code></div></li><li><span class='n'>8</span><div><b>האם המילה פלינדרום</b><code>Example08_Palindrome</code></div></li><li><span class='n'>9</span><div><b>קודים של תווים</b><code>Example09_CharCodes</code></div></li><li><span class='n'>10</span><div><b>מחרוזת אינה משתנה</b><code>Example10_StringsAreImmutable</code></div></li></ol></details>
+  <footer>
+    <a class="btn" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%208/Program.cs">💻 קוד</a>
+    <a class="btn ghost" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%208/README.md">📖 הסבר</a>
+    <a class='btn task' href='https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%208/%D7%9E%D7%A9%D7%99%D7%9E%D7%94%20%D7%90%D7%A1%D7%99%D7%A0%D7%9B%D7%A8%D7%95%D7%A0%D7%99%D7%AA.md'>📝 משימה אסינכרונית</a>
+  </footer>
+</article>
+<article class="chapter" id="ch9">
+  <header><span class="num">9</span><div><h3>מערכים</h3><span class='badge hot'>עם משימה</span></div></header>
+  <ul class="points"><li>מערך הוא אוסף של ערכים מאותו טיפוס תחת שם אחד, ולכל ערך מקום שמתחיל באפס.</li><li>מעבר על מערך נעשה בלולאה מאפס ועד האורך פחות אחד.</li><li>אלגוריתמים בסיסיים: סכום, ממוצע, מקסימום ומינימום, חיפוש, ספירה לפי תנאי והיפוך.</li><li>מערך שנשלח לפעולה נשלח כהפניה, ולכן שינוי בתוך הפעולה משנה את המערך המקורי.</li></ul>
+  <details><summary>11 דוגמאות בפרק</summary><ol class="examples"><li><span class='n'>1</span><div><b>יצירת מערך</b><code>Example01_CreateArray</code></div></li><li><span class='n'>2</span><div><b>הדפסת מערך</b><code>Example02_PrintArray</code></div></li><li><span class='n'>3</span><div><b>סכום וממוצע</b><code>Example03_SumAndAverage</code></div></li><li><span class='n'>4</span><div><b>הערך הגדול והקטן ביותר</b><code>Example04_MaxAndMin</code></div></li><li><span class='n'>5</span><div><b>חיפוש איבר</b><code>Example05_SearchInArray</code></div></li><li><span class='n'>6</span><div><b>ספירת איברים לפי תנאי</b><code>Example06_CountCondition</code></div></li><li><span class='n'>7</span><div><b>היפוך מערך במקום</b><code>Example07_ReverseArray</code></div></li><li><span class='n'>8</span><div><b>מערך כפרמטר לפעולה</b><code>Example08_ArrayAsParameter</code></div></li><li><span class='n'>9</span><div><b>מערך של מספרים אקראיים</b><code>Example09_RandomArray</code></div></li><li><span class='n'>10</span><div><b>מערך שסופר</b><code>Example10_FrequencyArray</code></div></li><li><span class='n'>11</span><div><b>מערך של מחרוזות</b><code>Example11_ArrayOfStrings</code></div></li></ol></details>
+  <footer>
+    <a class="btn" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%209/Program.cs">💻 קוד</a>
+    <a class="btn ghost" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%209/README.md">📖 הסבר</a>
+    <a class='btn task' href='https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%209/%D7%9E%D7%A9%D7%99%D7%9E%D7%94%20%D7%90%D7%A1%D7%99%D7%A0%D7%9B%D7%A8%D7%95%D7%A0%D7%99%D7%AA.md'>📝 משימה אסינכרונית</a>
+  </footer>
+</article>
+<article class="chapter" id="ch10">
+  <header><span class="num">10</span><div><h3>מערך דו-ממדי</h3><span class='badge hot'>עם משימה</span></div></header>
+  <ul class="points"><li>מערך דו-ממדי הוא טבלה של שורות ועמודות, והגישה לתא נעשית בעזרת מספר שורה ומספר עמודה.</li><li>מעבר על כל התאים נעשה בשתי לולאות מקוננות, והאורכים מתקבלים מהמימד הראשון והשני.</li><li>חישוב לפי שורות מאפס את הסכום בתוך הלולאה החיצונית, וחישוב לפי עמודות הופך את סדר הלולאות.</li><li>אלכסונים, חיפוש, הופכי של טבלה ולוח משחק הם דוגמאות לשימושים.</li></ul>
+  <details><summary>10 דוגמאות בפרק</summary><ol class="examples"><li><span class='n'>1</span><div><b>יצירת מערך דו-ממדי</b><code>Example01_CreateMatrix</code></div></li><li><span class='n'>2</span><div><b>הדפסת טבלה</b><code>Example02_PrintMatrix</code></div></li><li><span class='n'>3</span><div><b>סכום כל התאים</b><code>Example03_SumOfMatrix</code></div></li><li><span class='n'>4</span><div><b>סכום של כל שורה</b><code>Example04_RowSums</code></div></li><li><span class='n'>5</span><div><b>סכום של כל עמודה</b><code>Example05_ColumnSums</code></div></li><li><span class='n'>6</span><div><b>אלכסונים</b><code>Example06_Diagonals</code></div></li><li><span class='n'>7</span><div><b>חיפוש ערך בטבלה</b><code>Example07_SearchInMatrix</code></div></li><li><span class='n'>8</span><div><b>לוח הכפל</b><code>Example08_MultiplicationTable</code></div></li><li><span class='n'>9</span><div><b>טבלה מהופכת</b><code>Example09_Transpose</code></div></li><li><span class='n'>10</span><div><b>לוח משחק עם תווים</b><code>Example10_BoardGame</code></div></li></ol></details>
+  <footer>
+    <a class="btn" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%2010/Program.cs">💻 קוד</a>
+    <a class="btn ghost" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%2010/README.md">📖 הסבר</a>
+    <a class='btn task' href='https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%2010/%D7%9E%D7%A9%D7%99%D7%9E%D7%94%20%D7%90%D7%A1%D7%99%D7%A0%D7%9B%D7%A8%D7%95%D7%A0%D7%99%D7%AA.md'>📝 משימה אסינכרונית</a>
+  </footer>
+</article>
+<article class="chapter" id="ch11">
+  <header><span class="num">11</span><div><h3>מחלקות ועצמים (כולל הכלת עצמים)</h3><span class='badge hot'>עם משימה</span></div></header>
+  <ul class="points"><li>מחלקה היא תבנית ליצירת עצמים. היא מגדירה תכונות פרטיות, פעולה בונה, מאפיינים ופעולות.</li><li>עצם נוצר בעזרת מילה שמורה ליצירה, ולכל עצם יש ערכים משלו.</li><li>הכלת עצמים: תכונה של מחלקה היא עצם של מחלקה אחרת, למשל לעיגול יש מרכז שהוא נקודה.</li><li>משתנה של עצם מחזיק הפנייה, ולכן שתי השמות של עצם מצביעות על אותו עצם.</li><li>המחלקות כתובות בקובץ נפרד מהקובץ הראשי.</li></ul>
+  <details><summary>10 דוגמאות בפרק</summary><ol class="examples"><li><span class='n'>1</span><div><b>יצירת עצמים</b><code>Example01_CreateObjects</code></div></li><li><span class='n'>2</span><div><b>מאפיינים ובדיקת תקינות</b><code>Example02_PropertiesAndValidation</code></div></li><li><span class='n'>3</span><div><b>פעולות של עצם</b><code>Example03_ObjectMethods</code></div></li><li><span class='n'>4</span><div><b>שתי פעולות בונות</b><code>Example04_TwoConstructors</code></div></li><li><span class='n'>5</span><div><b>הכלת עצמים</b><code>Example05_ContainmentCircleAndPoint</code></div></li><li><span class='n'>6</span><div><b>חשבון בנק</b><code>Example06_BankAccount</code></div></li><li><span class='n'>7</span><div><b>הכלה של אדם וכתובת</b><code>Example07_ContainmentPersonAndAddress</code></div></li><li><span class='n'>8</span><div><b>מערך של עצמים</b><code>Example08_ArrayOfObjects</code></div></li><li><span class='n'>9</span><div><b>עצמים הם הפניות</b><code>Example09_ObjectsAreReferences</code></div></li><li><span class='n'>10</span><div><b>מחלקה שמחזיקה מערך</b><code>Example10_ClassWithArray</code></div></li></ol></details>
+  <footer>
+    <a class="btn" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%2011/Program.cs">💻 קוד</a>
+    <a class="btn ghost" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%2011/README.md">📖 הסבר</a>
+    <a class='btn task' href='https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%2011/%D7%9E%D7%A9%D7%99%D7%9E%D7%94%20%D7%90%D7%A1%D7%99%D7%A0%D7%9B%D7%A8%D7%95%D7%A0%D7%99%D7%AA.md'>📝 משימה אסינכרונית</a>
+  </footer>
+</article>
+<article class="chapter" id="ch12">
+  <header><span class="num">12</span><div><h3>הורשה (כולל מחלקה מופשטת)</h3><span class='badge hot'>עם משימה</span></div></header>
+  <ul class="points"><li>הורשה מאפשרת למחלקת בן לקבל תכונות ופעולות ממחלקת אב. הקשר ביניהן הוא מסוג הוא: כלב הוא חיה.</li><li>הפעולה הבונה של הבן קוראת לפעולה הבונה של האב. פעולה וירטואלית של האב אפשר להחליף בבן.</li><li>תכונה מוגנת זמינה ליורשים. אפשר להפעיל פעולה של האב מתוך הבן.</li><li>מחלקה מופשטת לא ניתנת ליצירה. היא יכולה להכיל פעולות מופשטות שכל יורש חייב לממש.</li><li>המחלקות כתובות בקובץ נפרד מהקובץ הראשי.</li></ul>
+  <details><summary>10 דוגמאות בפרק</summary><ol class="examples"><li><span class='n'>1</span><div><b>תכונות ופעולות שעוברות בירושה</b><code>Example01_InheritedMembers</code></div></li><li><span class='n'>2</span><div><b>יורש יכול להוסיף דברים חדשים</b><code>Example02_ChildHasNewMembers</code></div></li><li><span class='n'>3</span><div><b>החלפת פעולה של האב</b><code>Example03_OverridingMethods</code></div></li><li><span class='n'>4</span><div><b>הפעולה הבונה של היורש</b><code>Example04_BaseConstructor</code></div></li><li><span class='n'>5</span><div><b>קריאה לפעולה של האב מתוך הבן</b><code>Example05_CallingBaseMethod</code></div></li><li><span class='n'>6</span><div><b>הורשה בכמה רמות</b><code>Example06_MultiLevelInheritance</code></div></li><li><span class='n'>7</span><div><b>מחלקה מופשטת</b><code>Example07_AbstractClass</code></div></li><li><span class='n'>8</span><div><b>אי אפשר ליצור עצם ממחלקה מופשטת</b><code>Example08_AbstractCannotBeCreated</code></div></li><li><span class='n'>9</span><div><b>משתנה של האב יכול להחזיק עצם של בן</b><code>Example09_ParentVariableHoldsChild</code></div></li><li><span class='n'>10</span><div><b>מערך של עצמים מסוג האב</b><code>Example10_ArrayOfParents</code></div></li></ol></details>
+  <footer>
+    <a class="btn" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%2012/Program.cs">💻 קוד</a>
+    <a class="btn ghost" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%2012/README.md">📖 הסבר</a>
+    <a class='btn task' href='https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%2012/%D7%9E%D7%A9%D7%99%D7%9E%D7%94%20%D7%90%D7%A1%D7%99%D7%A0%D7%9B%D7%A8%D7%95%D7%A0%D7%99%D7%AA.md'>📝 משימה אסינכרונית</a>
+  </footer>
+</article>
+<article class="chapter" id="ch13">
+  <header><span class="num">13</span><div><h3>פולימורפיזם</h3><span class='badge hot'>עם משימה</span></div></header>
+  <ul class="points"><li>פולימורפיזם: אותה קריאה לפעולה מתנהגת אחרת לפי הסוג האמיתי של העצם.</li><li>משתנה, מערך או פרמטר מסוג האב יכולים להחזיק עצמים מכל היורשים.</li><li>הפעולה שמופעלת נקבעת בזמן ההרצה לפי העצם, ולא לפי סוג המשתנה.</li><li>כדי להפעיל פעולה שיש רק ליורש, ממירים במפורש לסוג היורש, אחרי שמוודאים שהעצם באמת מהסוג הזה.</li><li>המחלקות כתובות בקובץ נפרד מהקובץ הראשי.</li></ul>
+  <details><summary>10 דוגמאות בפרק</summary><ol class="examples"><li><span class='n'>1</span><div><b>אותה קריאה, התנהגות שונה</b><code>Example01_SameCallDifferentBehavior</code></div></li><li><span class='n'>2</span><div><b>מערך מסוג האב</b><code>Example02_ArrayOfParentType</code></div></li><li><span class='n'>3</span><div><b>פעולה שמקבלת פרמטר מסוג האב</b><code>Example03_MethodWithParentParameter</code></div></li><li><span class='n'>4</span><div><b>סכום שטחים של צורות שונות</b><code>Example04_ShapesTotalArea</code></div></li><li><span class='n'>5</span><div><b>חישוב שכר לעובדים מסוגים שונים</b><code>Example05_Payroll</code></div></li><li><span class='n'>6</span><div><b>גם פעולת הטקסט היא פולימורפית</b><code>Example06_ToStringIsPolymorphic</code></div></li><li><span class='n'>7</span><div><b>המרה מפורשת ליורש</b><code>Example07_CastingToChild</code></div></li><li><span class='n'>8</span><div><b>פעולה שמחזירה את סוג האב</b><code>Example08_ReturnParentType</code></div></li><li><span class='n'>9</span><div><b>חיפוש הצורה הגדולה ביותר</b><code>Example09_FindTheBiggest</code></div></li><li><span class='n'>10</span><div><b>תזמורת אקראית</b><code>Example10_Orchestra</code></div></li></ol></details>
+  <footer>
+    <a class="btn" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%2013/Program.cs">💻 קוד</a>
+    <a class="btn ghost" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%2013/README.md">📖 הסבר</a>
+    <a class='btn task' href='https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%2013/%D7%9E%D7%A9%D7%99%D7%9E%D7%94%20%D7%90%D7%A1%D7%99%D7%A0%D7%9B%D7%A8%D7%95%D7%A0%D7%99%D7%AA.md'>📝 משימה אסינכרונית</a>
+  </footer>
+</article>
+<article class="chapter" id="ch14">
+  <header><span class="num">14</span><div><h3>ממשקים</h3><span class='badge hot'>עם משימה</span></div></header>
+  <ul class="points"><li>ממשק הוא חוזה: רשימה של פעולות שמחלקה שמממשת אותו מתחייבת לכתוב. אין בו מימוש.</li><li>מחלקה יכולה לרשת מאב אחד בלבד, אבל לממש כמה ממשקים.</li><li>משתנה, מערך או פרמטר מסוג ממשק מחזיקים עצמים מכל מחלקה שמממשת אותו, גם אם המחלקות לא קשורות בהורשה.</li><li>אי אפשר ליצור עצם מממשק עצמו.</li><li>המחלקות והממשקים כתובים בקובץ נפרד מהקובץ הראשי.</li></ul>
+  <details><summary>10 דוגמאות בפרק</summary><ol class="examples"><li><span class='n'>1</span><div><b>מימוש ממשק</b><code>Example01_ImplementingInterface</code></div></li><li><span class='n'>2</span><div><b>מחלקה שמממשת כמה ממשקים</b><code>Example02_TwoInterfaces</code></div></li><li><span class='n'>3</span><div><b>ממשק כטיפוס של משתנה</b><code>Example03_InterfaceAsVariableType</code></div></li><li><span class='n'>4</span><div><b>מערך של ממשק</b><code>Example04_ArrayOfInterface</code></div></li><li><span class='n'>5</span><div><b>פעולה שמקבלת ממשק כפרמטר</b><code>Example05_MethodWithInterfaceParameter</code></div></li><li><span class='n'>6</span><div><b>ממשק של צורות</b><code>Example06_ShapesInterface</code></div></li><li><span class='n'>7</span><div><b>מחלקות שאינן קשורות זו לזו</b><code>Example07_UnrelatedClasses</code></div></li><li><span class='n'>8</span><div><b>סכום כל התשלומים</b><code>Example08_TotalPayments</code></div></li><li><span class='n'>9</span><div><b>מחלקה מופשטת וממשק יחד</b><code>Example09_AbstractClassAndInterface</code></div></li><li><span class='n'>10</span><div><b>אותו עצם, כמה זהויות</b><code>Example10_FilteringByInterface</code></div></li></ol></details>
+  <footer>
+    <a class="btn" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%2014/Program.cs">💻 קוד</a>
+    <a class="btn ghost" href="https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%2014/README.md">📖 הסבר</a>
+    <a class='btn task' href='https://github.com/ciznerguy/thelma-yesodot-11/blob/main/%D7%A4%D7%A8%D7%A7%2014/%D7%9E%D7%A9%D7%99%D7%9E%D7%94%20%D7%90%D7%A1%D7%99%D7%A0%D7%9B%D7%A8%D7%95%D7%A0%D7%99%D7%AA.md'>📝 משימה אסינכרונית</a>
+  </footer>
+</article></section>
+
+  <h2 id="start">איך פותחים ומריצים</h2>
+  <p class="sub">נדרש Visual Studio 2022 (או חדש יותר) או ערכת הפיתוח של .NET 8.</p>
+  <ol class="steps">
+    <li><b>מורידים את המאגר</b><br>ב-GitHub: Code ואז Download ZIP, או שכפול בעזרת הפקודה.<pre>git clone https://github.com/ciznerguy/thelma-yesodot-11.git</pre></li>
+    <li><b>פותחים את הפתרון</b><br>לוחצים פעמיים על הקובץ <code>ThelmaYesodot11.sln</code> כדי לפתוח אותו ב-Visual Studio.</li>
+    <li><b>בוחרים פרק</b><br>לחיצה ימנית על הפרויקט של הפרק (למשל <code>Perek05</code>) ואז Set as Startup Project.</li>
+    <li><b>מריצים</b><br>לוחצים על הכפתור הירוק Start. ב-<code>Main</code> כל שורה מפעילה דוגמה, ואפשר לסמן שורות בהערה כדי לדלג עליהן.</li>
+  </ol>
+  <p class="sub" style="margin-top:14px">משורת הפקודה:</p>
+  <pre>dotnet build
+cd "פרק 5"
+dotnet run</pre>
+
+  <h2>הערות על הקוד</h2>
+  <div class="note"><ul>
+    <li>ההערות בקוד כתובות בעברית בלבד, והפלט של התוכניות באנגלית כדי שיוצג נכון בכל חלון הרצה.</li>
+    <li>הקוד תואם את תכנית הלימודים: בלי אופרטור תנאי מקוצר, בלי השמות מקוצרות, בלי switch, do-while, break, continue ו-try/catch.</li>
+    <li>בפרקים 11 עד 14 המחלקות נמצאות בקובץ <code>Classes.cs</code> נפרד.</li>
+    <li>משימות אסינכרוניות מוגשות ב-Google Classroom.</li>
+  </ul></div>
+</main>
+
+<footer class="site"><div class="wrap">יסודות מדעי המחשב, תלמה ילין · <a href="https://github.com/ciznerguy/thelma-yesodot-11">קוד המקור ב-GitHub</a></div></footer>
+</body>
+</html>
