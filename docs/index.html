@@ -349,6 +349,28 @@ dotnet run</pre>
 <footer class="site"><div class="wrap">יסודות מדעי המחשב, תלמה ילין · <a href="https://github.com/ciznerguy/thelma-yesodot-11">קוד המקור ב-GitHub</a></div></footer>
 <script>
 (function(){
+  // כל כרטיסי הפרקים באותו גובה: מתאימים לכרטיס הגבוה ביותר (כשהפירוטים סגורים)
+  function equalize(){
+    var cards=[].slice.call(document.querySelectorAll(".chapter"));
+    cards.forEach(function(c){c.style.minHeight="";});
+    if(window.innerWidth<700)return;
+    var openOnes=[].slice.call(document.querySelectorAll(".chapter details[open]"));
+    openOnes.forEach(function(d){d.removeAttribute("open");});
+    var max=0;
+    cards.forEach(function(c){max=Math.max(max,c.getBoundingClientRect().height);});
+    openOnes.forEach(function(d){d.setAttribute("open","");});
+    cards.forEach(function(c){c.style.minHeight=Math.ceil(max)+"px";});
+  }
+  var t;
+  function later(){clearTimeout(t);t=setTimeout(equalize,120);}
+  window.addEventListener("resize",later);
+  window.addEventListener("load",equalize);
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(equalize);}
+  equalize();
+})();
+</script>
+<script>
+(function(){
   var RAW="https://raw.githubusercontent.com/ciznerguy/thelma-yesodot-11/main/";
   document.addEventListener("click",function(e){
     var b=e.target.closest(".copy"); if(!b)return;
