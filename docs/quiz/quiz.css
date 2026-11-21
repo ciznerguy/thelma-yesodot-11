@@ -61,3 +61,4 @@ button:disabled{opacity:.5;cursor:default}
 footer{margin:34px 0;text-align:center;color:var(--muted);font-size:14px}
 @media (max-width:520px){.topicrow .nm{flex-basis:40%}.big b{font-size:52px}}
 @media (max-width:600px){pre{font-size:12.5px;padding:10px;white-space:pre-wrap;overflow-wrap:break-word}}
+.gem{margin-top:16px;padding:14px 16px;border:1.5px solid var(--brand2);border-radius:14px;background:color-mix(in srgb,var(--brand2) 8%,transparent)}.gem h3{margin:0 0 6px}.gem .small{margin-top:6px}#gemtxt{width:100%;min-height:160px;margin-top:8px;direction:rtl;font:13px/1.5 ui-monospace,monospace;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink)}
