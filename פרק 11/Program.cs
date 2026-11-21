@@ -16,7 +16,7 @@ internal class Program
         // 6. המחלקות כתובות בהמשך אותו קובץ, אחרי הפעולה הראשית. אין צורך להפריד אותן.
 
         Example01_CreateObjects();
-        Example02_PropertiesAndValidation();
+        Example02_GettersSettersAndValidation();
         Example03_ObjectMethods();
         Example04_TwoConstructors();
         Example05_ContainmentCircleAndPoint();
@@ -40,20 +40,20 @@ internal class Program
         Console.WriteLine();
     }
 
-    // דוגמה 2: מאפיינים ובדיקת תקינות
-    // המאפיין מאפשר לקרוא ולשנות תכונה פרטית, ואפשר לבדוק את הערך לפני שמירתו.
-    static void Example02_PropertiesAndValidation()
+    // דוגמה 2: פעולות גישה ובדיקת תקינות
+    // פעולת קבלה מחזירה ערך של תכונה פרטית. פעולת שינוי מקבלת ערך חדש, ואפשר לבדוק אותו לפני שמירתו.
+    static void Example02_GettersSettersAndValidation()
     {
         Student s = new Student("Noa", 80);
-        Console.WriteLine("Name: " + s.Name);
-        Console.WriteLine("Grade: " + s.Grade);
+        Console.WriteLine("Name: " + s.GetName());
+        Console.WriteLine("Grade: " + s.GetGrade());
 
-        s.Grade = 90;
-        Console.WriteLine("After a valid change: " + s.Grade);
+        s.SetGrade(90);
+        Console.WriteLine("After a valid change: " + s.GetGrade());
 
         // ציון לא תקין לא נשמר
-        s.Grade = 500;
-        Console.WriteLine("After an invalid change: " + s.Grade);
+        s.SetGrade(500);
+        Console.WriteLine("After an invalid change: " + s.GetGrade());
         Console.WriteLine();
     }
 
@@ -63,8 +63,8 @@ internal class Program
     {
         Student s1 = new Student("Maya", 56);
         Student s2 = new Student("Omer", 40);
-        Console.WriteLine(s1.Name + " passed? " + s1.IsPassing());
-        Console.WriteLine(s2.Name + " passed? " + s2.IsPassing());
+        Console.WriteLine(s1.GetName() + " passed? " + s1.IsPassing());
+        Console.WriteLine(s2.GetName() + " passed? " + s2.IsPassing());
         Console.WriteLine();
     }
 
@@ -107,13 +107,13 @@ internal class Program
     {
         BankAccount account = new BankAccount("Dana", 1000);
         account.Deposit(500);
-        Console.WriteLine("After deposit: " + account.Balance);
+        Console.WriteLine("After deposit: " + account.GetBalance());
 
         bool ok = account.Withdraw(300);
-        Console.WriteLine("Withdraw 300 succeeded? " + ok + ", balance: " + account.Balance);
+        Console.WriteLine("Withdraw 300 succeeded? " + ok + ", balance: " + account.GetBalance());
 
         ok = account.Withdraw(5000);
-        Console.WriteLine("Withdraw 5000 succeeded? " + ok + ", balance: " + account.Balance);
+        Console.WriteLine("Withdraw 5000 succeeded? " + ok + ", balance: " + account.GetBalance());
         Console.WriteLine();
     }
 
@@ -133,7 +133,7 @@ internal class Program
         Console.WriteLine(p3);
         Console.WriteLine("Noa and Dan same city? " + p1.LivesInSameCityAs(p2));
         Console.WriteLine("Noa and Lior same city? " + p1.LivesInSameCityAs(p3));
-        Console.WriteLine("City of Dan: " + p2.Address.City);
+        Console.WriteLine("City of Dan: " + p2.GetAddress().GetCity());
         Console.WriteLine();
     }
 
@@ -168,7 +168,7 @@ internal class Program
     {
         Student a = new Student("Dana", 70);
         Student b = a;
-        b.Grade = 100;
+        b.SetGrade(100);
         Console.WriteLine("a: " + a);
         Console.WriteLine("b: " + b);
 
@@ -182,10 +182,10 @@ internal class Program
         Console.WriteLine();
     }
 
-    // פעולת עזר: מורידה את הציון בעשר נקודות. הפעולה של הציון במחלקה דואגת שהציון יישאר תקין
+    // פעולת עזר: מורידה את הציון בעשר נקודות. פעולת השינוי במחלקה דואגת שהציון יישאר תקין
     static void ReduceGrade(Student s)
     {
-        s.Grade = s.Grade - 10;
+        s.SetGrade(s.GetGrade() - 10);
     }
 
     // דוגמה 10: מחלקה שמחזיקה מערך
@@ -197,7 +197,7 @@ internal class Program
         Console.WriteLine("Added Yossi: " + room.Add(new Student("Yossi", 70)));
         Console.WriteLine("Added Noa: " + room.Add(new Student("Noa", 80)));
         Console.WriteLine("Added Omer: " + room.Add(new Student("Omer", 60)));
-        Console.WriteLine("Students in class: " + room.Count);
+        Console.WriteLine("Students in class: " + room.GetCount());
         Console.WriteLine("Average: " + room.Average());
         Console.WriteLine("Best student: " + room.Best());
         Console.WriteLine();
@@ -227,23 +227,28 @@ internal class Student
         this.grade = grade;
     }
 
-    // מאפיין: דרך מבוקרת לקרוא ולשנות תכונה פרטית
-    public string Name
+    // פעולות גישה: פעולה שמחזירה ערך של תכונה פרטית, ופעולה שמשנה אותו בצורה מבוקרת
+    public string GetName()
     {
-        get { return name; }
-        set { name = value; }
+        return name;
     }
 
-    public int Grade
+    public void SetName(string name)
     {
-        get { return grade; }
-        set
+        this.name = name;
+    }
+
+    public int GetGrade()
+    {
+        return grade;
+    }
+
+    public void SetGrade(int grade)
+    {
+        // בדיקת תקינות: מקבלים רק ציון בטווח
+        if (grade >= 0 && grade <= 100)
         {
-            // בדיקת תקינות: מקבלים רק ציון בטווח
-            if (value >= 0 && value <= 100)
-            {
-                grade = value;
-            }
+            this.grade = grade;
         }
     }
 
@@ -280,16 +285,24 @@ internal class Point
         y = 0;
     }
 
-    public int X
+    public int GetX()
     {
-        get { return x; }
-        set { x = value; }
+        return x;
     }
 
-    public int Y
+    public void SetX(int x)
     {
-        get { return y; }
-        set { y = value; }
+        this.x = x;
+    }
+
+    public int GetY()
+    {
+        return y;
+    }
+
+    public void SetY(int y)
+    {
+        this.y = y;
     }
 
     // מרחק מנקודה אחרת
@@ -326,16 +339,24 @@ internal class Circle
         this.radius = radius;
     }
 
-    public Point Center
+    public Point GetCenter()
     {
-        get { return center; }
-        set { center = value; }
+        return center;
     }
 
-    public int Radius
+    public void SetCenter(Point center)
     {
-        get { return radius; }
-        set { radius = value; }
+        this.center = center;
+    }
+
+    public int GetRadius()
+    {
+        return radius;
+    }
+
+    public void SetRadius(int radius)
+    {
+        this.radius = radius;
     }
 
     public double Area()
@@ -367,9 +388,9 @@ internal class BankAccount
         this.balance = balance;
     }
 
-    public double Balance
+    public double GetBalance()
     {
-        get { return balance; }
+        return balance;
     }
 
     // הפקדה: מקבלים רק סכום חיובי
@@ -410,9 +431,9 @@ internal class Address
         this.street = street;
     }
 
-    public string City
+    public string GetCity()
     {
-        get { return city; }
+        return city;
     }
 
     public override string ToString()
@@ -433,21 +454,25 @@ internal class Person
         this.address = address;
     }
 
-    public string Name
+    public string GetName()
     {
-        get { return name; }
+        return name;
     }
 
-    public Address Address
+    public Address GetAddress()
     {
-        get { return address; }
-        set { address = value; }
+        return address;
+    }
+
+    public void SetAddress(Address address)
+    {
+        this.address = address;
     }
 
     // האם שני אנשים גרים באותה עיר
     public bool LivesInSameCityAs(Person other)
     {
-        return address.City == other.address.City;
+        return address.GetCity() == other.address.GetCity();
     }
 
     public override string ToString()
@@ -489,7 +514,7 @@ internal class ClassRoom
         int sum = 0;
         for (int i = 0; i < count; i++)
         {
-            sum = sum + students[i].Grade;
+            sum = sum + students[i].GetGrade();
         }
         return (double)sum / count;
     }
@@ -504,7 +529,7 @@ internal class ClassRoom
         Student best = students[0];
         for (int i = 1; i < count; i++)
         {
-            if (students[i].Grade > best.Grade)
+            if (students[i].GetGrade() > best.GetGrade())
             {
                 best = students[i];
             }
@@ -512,8 +537,8 @@ internal class ClassRoom
         return best;
     }
 
-    public int Count
+    public int GetCount()
     {
-        get { return count; }
+        return count;
     }
 }

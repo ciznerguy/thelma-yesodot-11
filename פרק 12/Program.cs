@@ -33,7 +33,7 @@ internal class Program
     {
         Cat cat = new Cat("Tom", 3);
         Console.WriteLine(cat);
-        Console.WriteLine("Name: " + cat.Name);
+        Console.WriteLine("Name: " + cat.GetName());
         Console.WriteLine();
     }
 
@@ -143,7 +143,7 @@ internal class Program
         zoo[2] = new Dog("Bobby", 2, false);
         for (int i = 0; i < zoo.Length; i++)
         {
-            Console.WriteLine(zoo[i].Name + " says " + zoo[i].Speak());
+            Console.WriteLine(zoo[i].GetName() + " says " + zoo[i].Speak());
         }
         Console.WriteLine();
     }
@@ -170,9 +170,9 @@ internal class Animal
         this.age = age;
     }
 
-    public string Name
+    public string GetName()
     {
-        get { return name; }
+        return name;
     }
 
     // פעולה שהיורשים יכולים להחליף: מוגדרת כווירטואלית
@@ -241,9 +241,9 @@ internal class Employee
         this.salary = salary;
     }
 
-    public string Name
+    public string GetName()
     {
-        get { return name; }
+        return name;
     }
 
     public virtual double GetPay()

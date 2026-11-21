@@ -16,9 +16,9 @@ internal class Program
 
         Example01_LengthAndIndex();
         Example02_PrintEachChar();
-        Example03_Substring();
+        Example03_PartOfString();
         Example04_IndexOfAndContains();
-        Example05_UpperLowerReplace();
+        Example05_ReplaceChar();
         Example06_CountLetter();
         Example07_ReverseString();
         Example08_Palindrome();
@@ -53,21 +53,35 @@ internal class Program
         Console.WriteLine();
     }
 
-    // דוגמה 3: חיתוך חלק ממחרוזת
-    // עם פרמטר אחד: מהמקום הנתון ועד הסוף.
-    // עם שני פרמטרים: מהמקום הנתון, ובאורך שנקבע.
-    static void Example03_Substring()
+    // דוגמה 3: חלק ממחרוזת בעזרת לולאה
+    // כדי לקבל חלק ממחרוזת, בונים מחרוזת חדשה ומוסיפים לה את התווים מהמקום הרצוי.
+    // מתחילים ממחרוזת ריקה, ובכל סיבוב מחברים אליה תו אחד.
+    static void Example03_PartOfString()
     {
         string text = "programming";
-        Console.WriteLine("From place 3: " + text.Substring(3));
-        Console.WriteLine("Four chars from place 0: " + text.Substring(0, 4));
-        Console.WriteLine("Last three chars: " + text.Substring(text.Length - 3));
+        // ארבעת התווים הראשונים: המקומות מאפס עד שלוש
+        string start = "";
+        for (int i = 0; i < 4; i++)
+        {
+            start = start + text[i];
+        }
+        Console.WriteLine("Four chars from place 0: " + start);
 
-        // חיתוך שם פרטי מתוך שם מלא, עד לרווח
+        // שם פרטי ושם משפחה: מוצאים את מקום הרווח, ובונים כל חלק בנפרד
         string fullName = "Dana Levi";
         int space = fullName.IndexOf(" ");
-        Console.WriteLine("First name: " + fullName.Substring(0, space));
-        Console.WriteLine("Last name: " + fullName.Substring(space + 1));
+        string first = "";
+        for (int i = 0; i < space; i++)
+        {
+            first = first + fullName[i];
+        }
+        string last = "";
+        for (int i = space + 1; i < fullName.Length; i++)
+        {
+            last = last + fullName[i];
+        }
+        Console.WriteLine("First name: " + first);
+        Console.WriteLine("Last name: " + last);
         Console.WriteLine();
     }
 
@@ -86,15 +100,25 @@ internal class Program
         Console.WriteLine();
     }
 
-    // דוגמה 5: אותיות גדולות, קטנות והחלפה
-    // כל הפעולות האלה מחזירות מחרוזת חדשה, והמקורית נשארת כמו שהייתה.
-    static void Example05_UpperLowerReplace()
+    // דוגמה 5: החלפת תו במחרוזת
+    // אי אפשר לשנות תו בתוך מחרוזת קיימת, ולכן בונים מחרוזת חדשה.
+    // עוברים על כל התווים: אם התו הוא התו שמחליפים מוסיפים את התו החדש, ואחרת את התו המקורי.
+    static void Example05_ReplaceChar()
     {
         string text = "Hello World";
-        Console.WriteLine("Upper: " + text.ToUpper());
-        Console.WriteLine("Lower: " + text.ToLower());
-        Console.WriteLine("Replace: " + text.Replace("World", "Class"));
-        Console.WriteLine("Replace letter: " + text.Replace("o", "0"));
+        string result = "";
+        for (int i = 0; i < text.Length; i++)
+        {
+            if (text[i] == 'o')
+            {
+                result = result + '0';
+            }
+            else
+            {
+                result = result + text[i];
+            }
+        }
+        Console.WriteLine("Replace letter: " + result);
         Console.WriteLine("Original is unchanged: " + text);
         Console.WriteLine();
     }
@@ -199,19 +223,23 @@ internal class Program
 
     // דוגמה 10: מחרוזת אינה משתנה
     // אי אפשר לשנות תו בודד בתוך מחרוזת קיימת.
-    // כדי לקבל תוצאה אחרת בונים מחרוזת חדשה ושומרים אותה.
+    // חיבור מחרוזות יוצר מחרוזת חדשה, וכדי לשמור אותה צריך להשים אותה במשתנה.
     static void Example10_StringsAreImmutable()
     {
         string word = "cat";
-        // פעולה שמחזירה מחרוזת חדשה, אך לא שומרים אותה
-        word.ToUpper();
+        // חיבור שהתוצאה שלו לא נשמרת לא משנה את המשתנה
+        Console.WriteLine("Joined: " + (word + "s"));
         Console.WriteLine("Without saving: " + word);
-        // שומרים את התוצאה
-        word = word.ToUpper();
+        // שומרים את התוצאה במשתנה
+        word = word + "s";
         Console.WriteLine("After saving: " + word);
 
-        // החלפת האות הראשונה בעזרת חיתוך וחיבור
-        string changed = "b" + word.Substring(1);
+        // החלפת האות הראשונה: מתחילים מהאות החדשה ומוסיפים את שאר התווים
+        string changed = "b";
+        for (int i = 1; i < word.Length; i++)
+        {
+            changed = changed + word[i];
+        }
         Console.WriteLine("New word: " + changed);
         Console.WriteLine();
     }

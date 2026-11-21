@@ -77,7 +77,7 @@ internal class Program
     // פעולת עזר: מקבלת כלי נגינה מכל סוג
     static void Concert(Instrument instrument)
     {
-        Console.WriteLine("Now playing the " + instrument.Name);
+        Console.WriteLine("Now playing the " + instrument.GetName());
         Console.WriteLine(instrument.Play());
     }
 
@@ -250,9 +250,9 @@ internal class Instrument
         this.name = name;
     }
 
-    public string Name
+    public string GetName()
     {
-        get { return name; }
+        return name;
     }
 
     // פעולה וירטואלית: היורשים יכולים להחליף אותה
@@ -391,9 +391,9 @@ internal abstract class Worker
         this.name = name;
     }
 
-    public string Name
+    public string GetName()
     {
-        get { return name; }
+        return name;
     }
 
     public abstract double MonthlyPay();
