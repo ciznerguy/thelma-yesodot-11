@@ -60,3 +60,4 @@ button:disabled{opacity:.5;cursor:default}
 .small{color:var(--muted);font-size:14px}
 footer{margin:34px 0;text-align:center;color:var(--muted);font-size:14px}
 @media (max-width:520px){.topicrow .nm{flex-basis:40%}.big b{font-size:52px}}
+@media (max-width:600px){pre{font-size:12.5px;padding:10px;white-space:pre-wrap;overflow-wrap:break-word}}
