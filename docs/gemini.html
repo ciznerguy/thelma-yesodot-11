@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>למידה מותאמת אישית עם Gemini</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="quiz/quiz.css">
+<style>
+.how{counter-reset:s;list-style:none;padding:0;display:flex;flex-direction:column;gap:12px}
+.how li{counter-increment:s;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px 16px 18px;box-shadow:var(--shadow)}
+.how li::before{content:counter(s);display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--brand);color:#fff;font-weight:800;margin-inline-end:10px}
+.how b{font-size:18px}
+.tip{background:var(--card);border:1px solid var(--line);border-inline-start:5px solid var(--brand2);border-radius:14px;padding:14px 18px;margin:14px 0}
+.tip ul{margin:6px 0 0;padding-inline-start:20px}
+pre.sample{white-space:pre-wrap;direction:rtl;text-align:right;font-family:Heebo,system-ui,sans-serif}
+h2{margin:32px 0 8px}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a href="index.html#start">← חזרה לאתר הקורס</a>
+  <h1>למידה מותאמת אישית עם Gemini</h1>
+  <p>בסוף כל מבחן תרגול כפתור אחד מעתיק את התוצאות ופותח את Gemini, כדי לקבל תרגול שמתאים בדיוק למה שפספסתם.</p>
+</div></header>
+<main class="wrap">
+  <div class="notice">המבחן נועד למטרת למידה בלבד. אין ציון שנשמר, והתוצאות אינן נשלחות לאף גורם. הטקסט שמועתק אינו כולל שם או פרטים אישיים.</div>
+
+  <h2>איך עושים את זה, שלב אחר שלב</h2>
+  <ol class="how">
+    <li><b>פותרים מבחן תרגול.</b><br>בוחרים פרק באתר הקורס, לוחצים על "מבחן תרגול", עונים על 15 השאלות ולוחצים על "סיום ובדיקה".</li>
+    <li><b>לוחצים על "העתקה ופתיחת Gemini".</b><br>הכפתור נמצא בסוף המבחן, תחת "להמשיך ללמוד עם Gemini". לחיצה אחת מעתיקה את כל השאלות, את התשובות שלכם ואת המשוב, ופותחת את Gemini בלשונית חדשה. אם ההעתקה האוטומטית לא עובדת, הטקסט מופיע בתיבה ואפשר לסמן ולהעתיק אותו ידנית.</li>
+    <li><b>מתחברים לחשבון של בית הספר.</b><br>ב-Gemini ודאו שאתם מחוברים עם חשבון בית הספר שלכם.</li>
+    <li><b>מדביקים ושולחים.</b><br>במחשב מדביקים בעזרת <bdi dir="ltr">Ctrl+V</bdi>, ובטלפון בלחיצה ארוכה בתיבת השיחה ואז "הדבקה". הטקסט כבר כולל בקשה: Gemini מתרגל אתכם בדיוק בנושאים שבהם טעיתם, שאלה אחת בכל פעם.</li>
+    <li><b>לומדים בשיחה.</b><br>עונים על השאלות של Gemini. אם משהו לא ברור, כותבים "לא הבנתי, תסביר שוב עם דוגמה". כשמרגישים בטוחים, חוזרים למבחן ופותרים אותו שוב.</li>
+  </ol>
+
+  <h2>מה מועתק</h2>
+  <div class="tip"><ul>
+    <li>הנושא של הפרק והציון: כמה תשובות נכונות מתוך 15.</li>
+    <li>התוצאה בכל נושא.</li>
+    <li>כל השאלות, התשובה שלכם, התשובה הנכונה וההסבר.</li>
+    <li>בקשה ל-Gemini: להסביר מה כנראה לא הובן, לתרגל שאלה אחת בכל פעם, ולהישאר בתכנית הבגרות.</li>
+  </ul></div>
+
+  <h2>טיפים</h2>
+  <div class="tip"><ul>
+    <li>אל תכתבו ב-Gemini שם מלא, מספר זהות או פרטים אישיים אחרים. אין בהם צורך.</li>
+    <li>Gemini עלול לטעות. אם התשובה שלו נראית מוזרה, בדקו אותה מול הדוגמאות בפרק ובשיעור בקמפוס, או שאלו את המורה.</li>
+    <li>אל תבקשו מ-Gemini לפתור בשבילכם את המשימות להגשה. המטרה היא ללמוד, ואת המשימות כותבים בעצמכם.</li>
+    <li>אם Gemini מציע דברים שלא נלמדו (למשל switch, do-while, break או try/catch), התעלמו מהם. אפשר לכתוב לו: "תישאר בתכנית הבגרות".</li>
+    <li>אפשר לבקש גם: "תן לי עוד שאלה בנושא הכי חלש שלי", או "הסבר לי את זה עם דוגמה פשוטה יותר".</li>
+    <li>הציון הוא כלי ללמידה בלבד, ולא נשמר בשום מקום.</li>
+  </ul></div>
+</main>
+<footer>יסודות מדעי המחשב, תלמה ילין</footer>
+</body>
+</html>

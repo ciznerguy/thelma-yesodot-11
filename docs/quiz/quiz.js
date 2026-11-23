@@ -124,7 +124,7 @@
     h+="<div class=\"actions\"><button id=\"again\">נסו שוב (שאלות בסדר אחר)</button><a class=\"btn ghost\" href=\"../index.html#ch"+D.chapter+"\">חזרה לפרק</a></div>";
     h+="<section class=\"gem\"><h3>להמשיך ללמוד עם Gemini</h3><div>לחיצה על הכפתור מעתיקה את כל השאלות, התשובות שלכם והמשוב, ופותחת את Gemini. שם הדביקו ושלחו: במחשב בעזרת <bdi dir=\"ltr\">Ctrl+V</bdi>, ובטלפון בלחיצה ארוכה ואז \"הדבקה\". Gemini יתרגל אתכם בדיוק בנושאים שבהם טעיתם.</div>";
     h+="<div class=\"small\">ודאו שאתם מחוברים ל-Gemini עם חשבון בית הספר שלכם.</div>";
-    h+="<div class=\"actions\"><button id=\"gemini\">העתקה ופתיחת Gemini</button></div><div id=\"gemmsg\" class=\"small\"></div><textarea id=\"gemtxt\" readonly style=\"display:none\"></textarea></section></div>";
+    h+="<div class=\"actions\"><button id=\"gemini\">העתקה ופתיחת Gemini</button><a class=\"btn ghost\" href=\"../gemini.html\">איך עושים את זה?</a></div><div id=\"gemmsg\" class=\"small\"></div><textarea id=\"gemtxt\" readonly style=\"display:none\"></textarea></section></div>";
     var r=document.getElementById("result");r.innerHTML=h;r.style.display="block";
     document.getElementById("fin").style.display="none";document.getElementById("warn").textContent="";
     document.getElementById("again").onclick=function(){location.reload();};
